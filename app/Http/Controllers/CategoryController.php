@@ -37,7 +37,18 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        //    
+        {
         //
+        $category = Category::create($request->except('_token'));
+        $path = $request->file('photo')->store('photos', 'public');
+
+        $category->photo = $path;
+
+        $category->save();
+
+        return redirect()->route('shop.index');
+    }
     }
 
     /**

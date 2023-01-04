@@ -16,13 +16,12 @@ use App\Http\Controllers\CategoryController;
 Route::get('/empty', function () {
     return view('welcome');
 });
-
-
-Route::get('/', function () {
-    return view('shop.index');
+Route::get('/photos', function () {
+    return 'app/public/photos';
 });
 
 
 Route::get('/', [CategoryController::class, 'index']); 
+
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::resource('/categories', CategoryController::class);

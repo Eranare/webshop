@@ -18,4 +18,3 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
 
-#hoi Rick, nu geen foutmelding omdat dit gecomment is daag
