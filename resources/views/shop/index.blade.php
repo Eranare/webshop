@@ -1,5 +1,8 @@
 @extends('layout.app')
+
 @section('body')
+
+@extends('partials.basket')
 welcome to the shop
 
 
@@ -12,7 +15,7 @@ welcome to the shop
 @foreach ($categories as $category)
 <li>
 <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-<label for="photo" class="block text-sm font-medium text-gray-700"> Background </label>
+<label for="photo" class="block text-sm font-medium text-gray-700"> Category </label>
     <div class="mt-1 sm:mt-0 sm:col-span-2">
         <div class ="flex items-center"> 
             <span class="h-15 w-15 square-full overflow-hidden bg-gray-100">
