@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('name');
             $table->text('photo');
             $table->text('description')->nullable();
-            $table->text('quantity');
+            $table->text('stock');
             $table->text('price');
             $table->foreignId('category_id')->constrained();
             $table->timestamps();

@@ -59,7 +59,11 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        {
+            //
+            $category = Category::findOrFail($id);
+            return view('shop.category', ['category' => $category]);
+        }
     }
 
     /**
@@ -94,5 +98,9 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function getCategory($category) {
+        $singleCategory = Category::find($category);
+        return view('shop.category', ['category' => $singleCategory]);
     }
 }

@@ -1,22 +1,20 @@
 @extends('layout.app')
 @section('body')
-welcome to the shop
 
+Category {{$category->name}}
 
-<h2>Categories</h2>
+<br>Current catagory image <br>
+<img src ="{{ url('storage/'.$category->photo) }}"> <!--Current Category image-->
 
-
-        
-        
 <ul>
-@foreach ($categories as $category)
+@foreach ($category->products as $product)
 <li>
 <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
 <label for="photo" class="block text-sm font-medium text-gray-700"> Background </label>
     <div class="mt-1 sm:mt-0 sm:col-span-2">
         <div class ="flex items-center"> 
             <span class="h-15 w-15 square-full overflow-hidden bg-gray-100">
-                <a href="{{route('categories.show', $category->id)}}"><img class="h-full object-cover" src="{{ url('storage/'.$category->photo) }}" width='300px' height='200px' ></a>
+                <a href="{{route('products.show', $product->id)}}"><img class="h-full object-cover" src="{{ url('storage/'.$product->photo) }}" width='300px' height='200px' ></a>
             </span>
         </div>
     </div>
@@ -24,7 +22,5 @@ welcome to the shop
 </li>
 @endforeach
 </ul>
-
-
 
 @endsection

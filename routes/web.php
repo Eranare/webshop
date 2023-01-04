@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+//use App\Http\Controllers\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +24,11 @@ Route::get('/photos', function () {
 
 
 Route::get('/', [CategoryController::class, 'index']); 
-
-Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::resource('/categories', CategoryController::class);
+
+use APP\Http\Controllers\ProductController;
+
+Route::resource('/products', ProductController::class);
+Route::get('/products', [ProductController::class, 'index'])->name('shop.show');
+//Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+
