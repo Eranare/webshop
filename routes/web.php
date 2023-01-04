@@ -21,7 +21,10 @@ Route::get('/empty', function () {
 Route::get('/', function () {
     return view('shop.index');
 });
+Dit is nieuw;
+
 
 Route::get('/', [CategoryController::class, 'index']); 
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::resource('/categories', CategoryController::class);
+Hallo Rick;
