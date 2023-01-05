@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\models\Product;
+use App\models\Category;
 
 class ProductController extends Controller
 {
@@ -58,7 +59,14 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         return view('shop.product', ['product' => $product]);
     }
-
+/*
+    public function showProduct($id, $category_id)
+    {
+        $product = Product::findOrFail($id);
+        $category = Category::findOrFail($category_id);
+        return view('shop.product', compact(['product', 'category']));
+    }
+  */
     /**
      * Show the form for editing the specified resource.
      *
