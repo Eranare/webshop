@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
-//use App\Http\Controllers\ProductController;
-
+use App\Http\Controllers\ProductController;
+use App\Models\Category;
+use App\Models\Product;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,9 +16,6 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
-Route::get('/empty', function () {
-    return view('welcome');
-});
 Route::get('/photos', function () {
     return 'app/public/photos';
 });
@@ -26,9 +24,12 @@ Route::get('/photos', function () {
 Route::get('/', [CategoryController::class, 'index']); 
 Route::resource('/categories', CategoryController::class);
 
-use APP\Http\Controllers\ProductController;
 
-Route::resource('/products', ProductController::class);
-Route::get('/products', [ProductController::class, 'index'])->name('shop.show');
+//Route::get('/products', [ProductController::class, 'show']);
+//Route::post('/products', [ProductController::class, 'index']);
+//Route::resource('/categories/products', CategoryController::class);
+Route::resource('categories/products', ProductController::class);
+//Route::get('categories/products', [CategoryController::class, 'index']);
+//Route::resource('/categories/products', CategoryController::class);
 //Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
-
+//->name('shop.product')

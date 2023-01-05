@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\models\Product;
+
 class ProductController extends Controller
 {
     /**
@@ -14,11 +15,9 @@ class ProductController extends Controller
     public function index()
     {
         //
-        {
-            //
             $products = Product::all();
-            return view('shop.show')->with('products',$products); 
-        }
+            $category = Category::all();
+            return view('shop.index')->with('products',$products)->with('categories', $category); 
     }
 
     /**
@@ -39,6 +38,12 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+                //
+                $product = Product::create($request->except('_token'));
+                $path = $request->file('photo')->store('photos', 'public');
+                $product->photo = $path;
+                $product->save();
+                return redirect()->route('shop.index');
 
     }
 
@@ -50,9 +55,8 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
-        $product = Products::findOrFail($id);
-        return view('shop.show', ['product' => $product]);
+        $product = Product::findOrFail($id);
+        return view('shop.product', ['product' => $product]);
     }
 
     /**
@@ -88,4 +92,5 @@ class ProductController extends Controller
     {
         //
     }
+
 }

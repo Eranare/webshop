@@ -99,8 +99,9 @@ class CategoryController extends Controller
     {
         //
     }
+    /*
     public function getCategory($category) {
         $singleCategory = Category::find($category);
         return view('shop.category', ['category' => $singleCategory]);
-    }
+    } */
 }
