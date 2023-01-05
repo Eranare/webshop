@@ -2,6 +2,10 @@
 
 @section('body')
 @extends('partials.basket')
+<br>
+back button here.
+<br>
+
 Category {{$category->name}}
 Category ID : {{$category->id}}
 <br>Current catagory image <br>

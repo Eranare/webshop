@@ -3,6 +3,8 @@
 @section('body')
 
 @extends('partials.basket')
+
+Home stuff here <br>
 welcome to the shop
 
 
@@ -11,11 +13,11 @@ welcome to the shop
 
         
         
-<ul>
+<ul class="grid grid-cols-6 gap-4">
 @foreach ($categories as $category)
 <li>
-<div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-<label for="photo" class="block text-sm font-medium text-gray-700"> Category </label>
+<div > 
+<label>{{$category->id}} </label>
     <div class="mt-1 sm:mt-0 sm:col-span-2">
         <div class ="flex items-center"> 
             <span class="h-15 w-15 square-full overflow-hidden bg-gray-100">
@@ -27,7 +29,7 @@ welcome to the shop
 </li>
 @endforeach
 </ul>
-
+<!-- features -->
 <ul>
 @foreach ($category->products as $product)
 <li>
