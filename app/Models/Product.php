@@ -9,4 +9,9 @@ class Product extends Model
 {
     use HasFactory;
     protected $primaryKey = 'id';
+
+    public function Category() 
+{
+    return $this->belongsTo('App\Models\Category', 'id');
+}
 }

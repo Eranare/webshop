@@ -26,14 +26,10 @@ Route::get('/', [CategoryController::class, 'index']);
 Route::resource('/categories', CategoryController::class);
 
 
-//Route::get('/products', [ProductController::class, 'show']);
-//Route::post('/products', [ProductController::class, 'index']);
-//Route::resource('/categories/products', CategoryController::class);
+
+
+//Route::resource('categories/products', CategoryController::class);
 Route::resource('categories/products', ProductController::class);
-//Route::get('categories/products', [CategoryController::class, 'index']);
-//Route::resource('/categories/products', CategoryController::class);
-//Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
-//->name('shop.product')
 
 //-----------Cart
 
