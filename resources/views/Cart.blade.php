@@ -2,6 +2,7 @@
 
 
 @section('body')
+Back button somewhere here
           <main class="my-8">
             <div class="container px-6 mx-auto">
                 <div class="flex justify-center my-6">
@@ -80,9 +81,11 @@
                             @csrf
                             <button class="px-6 py-2 text-red-800 bg-red-300">Remove All Cart</button>
                           </form>
+                          <form action='#'>
+                            
+                            <button class="px-6 py-2 text-green-800 bg-green-300">Checkout</button>
+                          </form>
                         </div>
-
-
                       </div>
                     </div>
                   </div>

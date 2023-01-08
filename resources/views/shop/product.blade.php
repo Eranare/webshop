@@ -28,7 +28,7 @@ Product page
                         <input type="hidden" value="{{ $product->id }}" name="id">
                         <input type="hidden" value="{{ $product->name }}" name="name">
                         <input type="hidden" value="{{ $product->price }}" name="price">
-                        <input type="hidden" value="{{ $product->photo }}"  name="image">
+                        <input type="hidden" value="{{ url('storage/'.$product->photo) }}"  name="image">
                         <input type="hidden" value="1" name="quantity">
                         <button class="px-4 py-2 text-white bg-blue-800 rounded">Add To Cart</button>
                     </form>
