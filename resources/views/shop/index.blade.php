@@ -10,6 +10,7 @@ welcome to the shop
 
 <h2>Categories</h2>
 
+Pexels voor pictures
 
         
         

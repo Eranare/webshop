@@ -65,6 +65,16 @@ class CategoryController extends Controller
             return view('shop.category', ['category' => $category]);
         }
     }
+    /**
+     * 
+     * 
+     * @param mixed $id
+     * @return \Illuminate\Http\Response
+     */
+    public function productshow($id){
+        $category = Category::findOrFail($id);
+        return view('shop.product', ['category' => $category]);
+    }
 
     /**
      * Show the form for editing the specified resource.
