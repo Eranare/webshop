@@ -29,8 +29,9 @@ Product page
                         <input type="hidden" value="{{ $product->name }}" name="name">
                         <input type="hidden" value="{{ $product->price }}" name="price">
                         <input type="hidden" value="{{ url('storage/'.$product->photo) }}"  name="image"> <!-- dit werkte niet qua link, nu wel-->
-                        <input type="number" value="1" name="quantity">
-                        <button class="px-4 py-2 text-white bg-blue-800 rounded">Add To Cart</button>
+                        <input type="number" value="1" min="1" name="quantity">
+                        <button class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm
+            hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">voeg toe</button>
                     </form>
 
             <input type='number' id="quantity" placeholder='1'></input><button type ='submit' 
