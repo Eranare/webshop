@@ -24,9 +24,11 @@ Route::get('/photos', function () {
 
 Route::get('/', [CategoryController::class, 'index']); 
 Route::resource('/categories', CategoryController::class);
-
-
-
+/*
+Route::get('/categories/{category}/products/{product}', function ($category, $product) {
+    return 'categories/{category->id}/products/{product->id}';
+});
+*/
 
 //Route::resource('categories/products', CategoryController::class);
 Route::resource('categories/products', ProductController::class);
