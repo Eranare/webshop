@@ -41,7 +41,7 @@ Banner, carousel maybe
 <div class="">
 
     <div class="">
-        <div class =""> 
+        <div class ="border"> 
             <span class="">
                 <a href="{{route('products.show', $product->id)}}"><img class="h-full object-cover" src="{{ url('storage/'.$product->photo) }}" width='300px' height='200px' ></a>
             </span>
@@ -63,6 +63,7 @@ Spacing here
 <br>
 
 <h1>Show alles </h1>
+<br>
 <ul class="grid grid-cols-8 gap-6   ">
 @foreach ($categories as $category)
 @foreach ($category->products as $product)
