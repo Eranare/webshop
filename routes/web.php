@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AdminProductController;
 use App\Models\Category;
 use App\Models\Product;
 /*
@@ -33,3 +34,7 @@ Route::resource('categories/products', ProductController::class);
 //Route::resource('/categories/products', CategoryController::class);
 //Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 //->name('shop.product')
+
+Route::get('/admin', [AdminProductController::class, 'index']);
+
+Route::resource('admin', AdminProductController::class);
