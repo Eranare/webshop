@@ -17,6 +17,7 @@ Pexels voor pictures
 <ul class="grid grid-cols-6 gap-4">
 @foreach ($categories as $category)
 <li>
+    
 <div > 
 <label>{{$category->id}} </label>
     <div class="mt-1 sm:mt-0 sm:col-span-2">
