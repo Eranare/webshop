@@ -50,13 +50,17 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $id 
+     * @param int $category
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
+        
         $product = Product::findOrFail($id);
-        return view('shop.product', ['product' => $product]);
+        //$prodcat = $product->category_id;
+        $category = Category::findOrFail($product->category_id);
+        return view('shop.product', ['product' => $product, 'category' =>$category]);
     }
 /*
     public function showProduct($id, $category_id)
@@ -99,5 +103,4 @@ class ProductController extends Controller
     {
         //
     }
-
 }

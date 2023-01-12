@@ -23,7 +23,7 @@ class ProductFactory extends Factory
             'description' => $this->faker->realText(200, 2),
             'stock' => $this->faker->numberBetween(1, 20),
             'price'=> $this->faker->numberBetween(2,5),
-            'category_id'=>$this->faker->numberBetween(1,7),
+            'category_id'=>$this->faker->numberBetween(1,6),
         ];
     }
 }
