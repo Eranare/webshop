@@ -59,7 +59,7 @@ class ProductController extends Controller
     {
         
         $product = Product::findOrFail($id);
-        $prodcat = $product->category_id;
+        //$prodcat = $product->category_id;
         $category = Category::findOrFail($product->category_id);
         return view('shop.product', ['product' => $product, 'category' =>$category]);
     }

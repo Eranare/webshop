@@ -64,8 +64,7 @@ class CategoryController extends Controller
             $category = Category::findOrFail($id);
             return view('shop.category', ['category' => $category]);
         }
-    }
-    
+    }    
 
     /**
      * Show the form for editing the specified resource.
