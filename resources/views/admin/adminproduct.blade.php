@@ -5,14 +5,17 @@
 <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Admin page</h2>
+                <h2>Products page</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('admin.create') }}"> Create New Product</a>
             </div>
+            <div class="pull-left">
+                <a class="btn btn-success" href="{{ route('admincategory.index') }}"> To categories</a>
+            </div>
             @if (session('success'))
                 <div class="alert alert-success">
-                    {{ session('success') }} Goed gedaan!
+                    {{ session('success') }}
                 </div>
             @endif
         </div>
