@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\models\Product;
 use App\models\Category;
 
-class AdminProductController extends Controller
+class AdminCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,8 @@ class AdminProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        $category = Category::all();
-        return view('admin.adminproduct')->with('products',$products)->with('categories', $category); 
+        $categories = Category::all();
+        return view('admin.admincategory')->with('categories',$categories); 
     }
 
     /**
@@ -27,7 +26,7 @@ class AdminProductController extends Controller
      */
     public function create()
     {
-        return view('admin.createproduct');
+        return view('admin.createcategory');
     }
 
     /**
@@ -42,17 +41,13 @@ class AdminProductController extends Controller
             'name' => 'required',
             'photo' => 'required',
             'description' => 'required',
-            'stock' => 'required',
-            'price' => 'required',
-            'category_id' => 'required',
         ]);
 
-        Product::create($request->all());
+        Category::create($request->all());
 
-        return redirect()->route('admin.index')
-            ->with('success', 'Product added successfully');
+        return redirect()->route('admincategory.index')
+            ->with('success', 'Category added successfully');
     }
-    
 
     /**
      * Display the specified resource.
@@ -62,9 +57,9 @@ class AdminProductController extends Controller
      */
     public function show($id)
     {
-        $product = Product::findOrFail($id);
+        $category = Category::findOrFail($id);
 
-        return view('admin.showproduct', compact('product'));
+        return view('admin.showcategory', compact('category'));
     }
 
     /**
@@ -75,8 +70,8 @@ class AdminProductController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::findOrFail($id);
-        return view('admin.editproduct', compact('product'));
+        $category = Category::findOrFail($id);
+        return view('admin.editcategory', compact('category'));
     }
 
     /**
@@ -88,14 +83,14 @@ class AdminProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $product = Product::findOrFail($id);
+        $category = Category::findOrFail($id);
 
-        $product->update($request->all());
+        $category->update($request->all());
 
-        $product->save();
+        $category->save();
 
-        return redirect()->route('admin.index')
-            ->with('success', 'Product updated successfully');
+        return redirect()->route('admincategory.index')
+            ->with('success', 'Category updated successfully');
     }
 
     /**
@@ -106,11 +101,11 @@ class AdminProductController extends Controller
      */
     public function destroy($id)
     {
-        $product = Product::findOrFail($id);
+        $category = Category::findOrFail($id);
 
-        $product->delete();
+        $category->delete();
 
-        return redirect()->route('admin.index')
-                        ->with('success','Product deleted successfully');
+        return redirect()->route('admincategory.index')
+                        ->with('success','Category deleted successfully');
     }
 }
