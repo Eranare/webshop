@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\models\Product;
-use App\models\Category;
 
-class AdminCategoryController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +13,9 @@ class AdminCategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        return view('admin.category.admincategory')->with('categories',$categories); 
+        //
+
+        return view('admin.main'); 
     }
 
     /**
@@ -26,7 +25,7 @@ class AdminCategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.createcategory');
+        //
     }
 
     /**
@@ -37,16 +36,7 @@ class AdminCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'photo' => 'required',
-            'description' => 'required',
-        ]);
-
-        Category::create($request->all());
-
-        return redirect()->route('admincategory.index')
-            ->with('success', 'Category added successfully');
+        //
     }
 
     /**
@@ -57,9 +47,7 @@ class AdminCategoryController extends Controller
      */
     public function show($id)
     {
-        $category = Category::findOrFail($id);
-
-        return view('admin.showcategory', compact('category'));
+        //
     }
 
     /**
@@ -70,8 +58,7 @@ class AdminCategoryController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::findOrFail($id);
-        return view('admin.editcategory', compact('category'));
+        //
     }
 
     /**
@@ -83,14 +70,7 @@ class AdminCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $category = Category::findOrFail($id);
-
-        $category->update($request->all());
-
-        $category->save();
-
-        return redirect()->route('admincategory.index')
-            ->with('success', 'Category updated successfully');
+        //
     }
 
     /**
@@ -101,11 +81,6 @@ class AdminCategoryController extends Controller
      */
     public function destroy($id)
     {
-        $category = Category::findOrFail($id);
-
-        $category->delete();
-
-        return redirect()->route('admincategory.index')
-                        ->with('success','Category deleted successfully');
+        //
     }
 }

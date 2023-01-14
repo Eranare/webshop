@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 //use App\Models\Category;
 //use App\Models\Product;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\AdminCategoryController;
 
@@ -51,7 +52,10 @@ Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear'
 
 //--------------------Admin
 
-Route::get('/admin', [AdminProductController::class, 'index']);
+Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin/product', [AdminProductController::class, 'index']);
+
 Route::get('/admin/category', [AdminCategoryController::class, 'index']);
-Route::resource('admin', AdminProductController::class);
+Route::resource('admin', AdminController::class);
+Route::resource('adminproduct', AdminProductController::class);
 Route::resource('admincategory', AdminCategoryController::class);
