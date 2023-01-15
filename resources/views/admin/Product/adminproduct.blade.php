@@ -8,7 +8,7 @@
                 <h2>Products page</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('admin.create') }}"> Create New Product</a>
+                <a class="btn btn-success" href="{{ route('adminproduct.create') }}"> Create New Product</a>
             </div>
             <div class="pull-left">
                 <a class="btn btn-success" href="{{ route('admincategory.index') }}"> To categories</a>
@@ -54,12 +54,12 @@
                 <td class="truncate p-3">{{ $product->updated_at }}</td>
                 <!-- USING THE DETAILS BUTTON WE WILL AN OVERVIEW OF ALL THE DATA. -->
                 <td class="truncate p-3">
-                    <a class="bg-blue-300 px-4 py-2 rounded shadow-md" href="{{ route('admin.show',$product->id) }}"> details </a>
+                    <a class="bg-blue-300 px-4 py-2 rounded shadow-md" href="{{ route('adminproduct.show',$product->id) }}"> details </a>
                 </td>
                 <td class="truncate p-3">
-                    <a class="bg-blue-300 px-4 py-2 rounded shadow-md" href="{{ route('admin.edit',$product->id) }}"> edit </a>
+                    <a class="bg-blue-300 px-4 py-2 rounded shadow-md" href="{{ route('adminproduct.edit',$product->id) }}"> edit </a>
                 </td>
-                <form action="{{ route('admin.destroy',$product->id) }}" method="POST">
+                <form action="{{ route('adminproduct.destroy',$product->id) }}" method="POST">
                 <td class="truncate p-3">
                     @csrf
                     @method('DELETE')

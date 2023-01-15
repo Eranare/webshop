@@ -59,7 +59,7 @@ class AdminCategoryController extends Controller
     {
         $category = Category::findOrFail($id);
 
-        return view('admin.showcategory', compact('category'));
+        return view('admin.category.showcategory', compact('category'));
     }
 
     /**

@@ -17,7 +17,7 @@ class AdminProductController extends Controller
     {
         $products = Product::all();
         $category = Category::all();
-        return view('admin.adminproduct')->with('products',$products)->with('categories', $category); 
+        return view('admin.product.adminproduct')->with('products',$products)->with('categories', $category); 
     }
 
     /**
@@ -27,7 +27,7 @@ class AdminProductController extends Controller
      */
     public function create()
     {
-        return view('admin.createproduct');
+        return view('admin.product.createproduct');
     }
 
     /**
@@ -49,7 +49,7 @@ class AdminProductController extends Controller
 
         Product::create($request->all());
 
-        return redirect()->route('admin.index')
+        return redirect()->route('adminproduct.index')
             ->with('success', 'Product added successfully');
     }
     
@@ -64,7 +64,7 @@ class AdminProductController extends Controller
     {
         $product = Product::findOrFail($id);
 
-        return view('admin.showproduct', compact('product'));
+        return view('admin.product.showproduct', compact('product'));
     }
 
     /**
@@ -76,7 +76,7 @@ class AdminProductController extends Controller
     public function edit($id)
     {
         $product = Product::findOrFail($id);
-        return view('admin.editproduct', compact('product'));
+        return view('admin.product.editproduct', compact('product'));
     }
 
     /**
@@ -94,7 +94,7 @@ class AdminProductController extends Controller
 
         $product->save();
 
-        return redirect()->route('admin.index')
+        return redirect()->route('adminproduct.index')
             ->with('success', 'Product updated successfully');
     }
 

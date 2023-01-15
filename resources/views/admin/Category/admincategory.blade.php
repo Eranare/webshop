@@ -11,7 +11,7 @@
                 <a class="btn btn-success" href="{{ route('admincategory.create') }}"> Create New Category</a>
             </div>
             <div class="pull-left">
-                <a class="btn btn-success" href="{{ route('admin.index') }}"> To products</a>
+                <a class="btn btn-success" href="{{ route('adminproduct.index') }}"> To products</a>
             </div>
             @if (session('success'))
                 <div class="alert alert-success">
