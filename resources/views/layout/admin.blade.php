@@ -15,6 +15,13 @@
                     <h1 class ="text-3xl font-bold text-black">Admin</h1>
                 </div>
             </header>
+            <nav class="#">
+                <li><a href = "#"> Pending Orders</a></li>
+                <li><a href = "#"> Statistics</a></li>
+                <li><a href ="#"> Completed Orders</a></li>
+                <li><a class="btn btn-success" href="{{ route('adminproduct.index') }}"> Product Management</a></li>
+                <li><a class="btn btn-success" href="{{ route('admincategory.index') }}"> Category Management</a></li>
+            </nav>
 
         </div>
         <main>
