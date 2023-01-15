@@ -7,7 +7,7 @@
 Home stuff here <br>
 welcome to the shop
 
-
+<h2><a href ="{{route('admin.index' )}}">tempt admin link </a></h2>
 <h2>Categories</h2>
 
 Pexels voor pictures
