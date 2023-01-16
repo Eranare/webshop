@@ -1,9 +1,5 @@
-@extends('layout.admin')
+@extends('layouts.app')
 
-@section('body')
-<br>
-
-<h1>Admin main page.</h1>
-<p>Instruction text maybe.</p>
-
+@section('content')
+              
 @endsection
