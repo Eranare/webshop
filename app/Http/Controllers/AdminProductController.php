@@ -16,12 +16,12 @@ class AdminProductController extends Controller
      */
     public function index()
     {
-       // if (Auth::check()) {
+       if (Auth::check()) {
         $products = Product::all();
         $category = Category::all();
         return view('admin.product.adminproduct')->with('products',$products)->with('categories', $category); 
-       // }
-       // else return view('auth.login');
+       }
+       else return view('auth.login');
     }
 
     /**

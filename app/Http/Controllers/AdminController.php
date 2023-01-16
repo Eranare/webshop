@@ -14,11 +14,10 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
-       // if (Auth::check()) {
+        if (Auth::check()) {
             return view('admin.main');
-        //} 
-       // else return view('auth.login');
+        } 
+        else return view('auth.login');
     }
 
     /**

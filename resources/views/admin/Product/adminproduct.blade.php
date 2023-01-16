@@ -1,12 +1,3 @@
-
-
-
-
-
-@if(!Auth::user())
-@extends ('auth/login')
-@else 
-
 @extends('layouts.app')
 
 @section('content')
@@ -81,4 +72,3 @@
 
 
 @endsection
-@endif
