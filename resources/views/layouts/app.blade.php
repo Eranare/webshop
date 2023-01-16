@@ -44,11 +44,11 @@
                                 </li>
                             @endif
 
-                        <!--    @if (Route::has('register'))
+                           @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @endif -->
+                            @endif
                         @else
 
                             <li class="nav-item dropdown">
@@ -76,6 +76,13 @@
 
         @if (Auth::user())
         <main class="py-4">
+        <nav class="#">
+                <li><a class="btn btn-success" href = "#"> Pending Orders</a></li>
+                <li><a class="btn btn-success" href = "#"> Statistics</a></li>
+                <li><a class="btn btn-success" href ="#"> Completed Orders</a></li>
+                <li><a class="btn btn-success" href="{{ route('adminproduct.index') }}"> Product Management</a></li>
+                <li><a class="btn btn-success" href="{{ route('admincategory.index') }}"> Category Management</a></li>
+        </nav>
             @yield('content')
         </main>
         @elseif(!Auth::user())
