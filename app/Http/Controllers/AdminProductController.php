@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\models\Product;
 use App\models\Category;
 
+use \Illuminate\Support\Facades\Auth;
 class AdminProductController extends Controller
 {
     /**
@@ -15,9 +16,12 @@ class AdminProductController extends Controller
      */
     public function index()
     {
+       // if (Auth::check()) {
         $products = Product::all();
         $category = Category::all();
         return view('admin.product.adminproduct')->with('products',$products)->with('categories', $category); 
+       // }
+       // else return view('auth.login');
     }
 
     /**

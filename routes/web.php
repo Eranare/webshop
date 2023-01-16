@@ -62,4 +62,4 @@ Route::resource('admincategory', AdminCategoryController::class);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/Adminpanel', [App\Http\Controllers\HomeController::class, 'index'])->name('Adminpanel');
