@@ -64,4 +64,11 @@ class CartController extends Controller
 
         return redirect()->route('cart.list');
     }
+    public function checkOutCart(){
+        
+        //Create new data base entry of Customer_order after fake payment. then redirect and clear cart.
+
+        
+        
+    }
 }
