@@ -30,7 +30,7 @@
         </div>
         <main>
             <div>
-            @yield ('body')
+            @yield ('section')
             </div>
         </main>
     </div>

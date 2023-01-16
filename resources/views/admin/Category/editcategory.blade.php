@@ -1,6 +1,7 @@
-@extends('layout.admin')
+@extends('layouts.app')
 
-@section('body')
+@section('content')
+
 
 
 <div class="row">

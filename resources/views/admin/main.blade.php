@@ -1,9 +1,14 @@
-@extends('layout.admin')
+@extends('layouts.app')
 
-@section('body')
+@section('content')
 <br>
 
-<h1>Admin main page.</h1>
-<p>Instruction text maybe.</p>
+<nav class="#">
+                <li><a href = "#"> Pending Orders</a></li>
+                <li><a href = "#"> Statistics</a></li>
+                <li><a href ="#"> Completed Orders</a></li>
+                <li><a class="btn btn-success" href="{{ route('adminproduct.index') }}"> Product Management</a></li>
+                <li><a class="btn btn-success" href="{{ route('admincategory.index') }}"> Category Management</a></li>
 
+              
 @endsection

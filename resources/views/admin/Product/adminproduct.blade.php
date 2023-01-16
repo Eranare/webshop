@@ -1,7 +1,15 @@
-@extends('layout.admin')
 
-@section('body')
 
+
+
+
+@if(!Auth::user())
+@extends ('auth/login')
+@else 
+
+@extends('layouts.app')
+
+@section('content')
 <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
@@ -70,4 +78,7 @@
             @endforeach
         </tbody>
     </table>
+
+
 @endsection
+@endif

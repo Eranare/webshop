@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\models\Product;
 use App\models\Category;
 
+use \Illuminate\Support\Facades\Auth;
+
 class AdminCategoryController extends Controller
 {
     /**
@@ -14,10 +16,12 @@ class AdminCategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   if(Auth::check()){
         $categories = Category::all();
-        return view('admin.category.admincategory')->with('categories',$categories); 
+        return view('admin.category.admincategory')->with('categories',$categories); }
+      else return view('auth.login');
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -25,7 +29,7 @@ class AdminCategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    { 
         return view('admin.category.createcategory');
     }
 
