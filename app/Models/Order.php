@@ -9,7 +9,7 @@ class Order extends Model
 {
     use HasFactory;
 
-    public function Customer_Order(){
+    public function customer_Order(){
         {
             return $this->belongsTo('App\Models\Customer_Order', 'id');
         }
