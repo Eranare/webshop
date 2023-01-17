@@ -77,18 +77,37 @@
         </nav>
 
         @if (Auth::user())
-        <main class="py-4">
-        <nav class="#">
-                <li><a class="btn btn-success" href = "#"> Pending Orders</a></li>
-                <li><a class="btn btn-success" href = "#"> Statistics</a></li>
-                <li><a class="btn btn-success" href ="#"> Completed Orders</a></li>
-                <li><a class="btn btn-success" href="{{ route('adminproduct.index') }}"> Product Management</a></li>
-                <li><a class="btn btn-success" href="{{ route('admincategory.index') }}"> Category Management</a></li>
+    <div class="container-fluid">
+    <div class="row min-vh-100 flex-column flex-md-row">
+        <aside class="col-12 col-md-2 p-0 bg-dark flex-shrink-1">
+        <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
+            <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
+                <li class="nav-item">
+                    <a class="nav-link pl-0" href ="#"><i class="fa fa-bullseye fa-fw"></i><span class="d-none d-md-inline text-slate-400"> Pending Orders
+                    </span></a></li>
+                <li class="nav-item">
+                    <a class="nav-link pl-0" href ="#"><i class="fa fa-bullseye fa-fw"></i><span class="d-none d-md-inline text-slate-400"> Statistics
+                    </span></a></li>
+                <li class="nav-item">
+                    <a class="nav-link pl-0" href ="#"><i class="fa fa-bullseye fa-fw"></i><span class="d-none d-md-inline text-slate-400"> Completed Orders
+                    </span></a></li>
+                <li class="nav-item">
+                    <a class="nav-link pl-0" href="{{ route('adminproduct.index') }}"><i class="fa fa-bullseye fa-fw"></i><span class="d-none d-md-inline text-slate-400"> Product Management
+                    </span></a></li>
+                <li class="nav-item">
+                    <a class="nav-link pl-0" href="{{ route('admincategory.index') }}"><i class="fa fa-bullseye fa-fw"></i><span class="d-none d-md-inline text-slate-400"> Category Management
+                    </span></a></li>
+            </ul>
         </nav>
+        </aside>
+
+        <main class="col bg-faded py-3 flex-grow-1">
             @yield('content')
         </main>
+    </div>
+    </div>
         @elseif(!Auth::user())
-        <main class="py-4">
+        <main class="col bg-faded py-3 flex-grow-1">
             @yield('content2')
         </main>
     @endif

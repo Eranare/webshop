@@ -6,7 +6,7 @@
 <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Show Category</h2>
+                <h1 class="text-xl"> Show Category</h1>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <a class="bg-blue-200 px-3 py-2 m-8 rounded shadow-md" href="{{ route('admincategory.index') }}"> Back</a>
