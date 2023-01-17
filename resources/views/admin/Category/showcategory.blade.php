@@ -8,9 +8,9 @@
             <div class="pull-left">
                 <h2> Show Category</h2>
             </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('admincategory.index') }}"> Back</a>
-            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+            <a class="bg-blue-200 px-3 py-2 m-8 rounded shadow-md" href="{{ route('admincategory.index') }}"> Back</a>
+        </div>
         </div>
     </div>
    
