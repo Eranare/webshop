@@ -2,14 +2,13 @@
 
 @section('content')
 
-
 <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h1 class="text-xl">Categories page</h1>
             </div>
-            <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('admincategory.create') }}"> Create New Category</a>
+            <div class="pull-right text-center">
+                <a class="btn btn-success" href="{{ route('admincategory.create') }}" style="position: fixed"> Create New Category</a>
             </div>
             @if (session('success'))
                 <div class="alert alert-success">
@@ -18,7 +17,7 @@
             @endif
         </div>
     </div>
-
+<br><br><br>
     <!-- IAM USING TAILWIND CSS TO STYLE THE TABLE. -->
     <table class="p-10">
         <thead>

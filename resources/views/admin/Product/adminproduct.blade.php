@@ -7,8 +7,8 @@
             <div class="pull-left">
                 <h1 class="text-xl">Products page</h1>
             </div>
-            <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('adminproduct.create') }}"> Create New Product</a>
+            <div class="pull-right text-center">
+                <a class="btn btn-success" href="{{ route('adminproduct.create') }}" style="position: fixed"> Create New Product</a>
             </div>
             @if (session('success'))
                 <div class="alert alert-success">
@@ -17,7 +17,7 @@
             @endif
         </div>
     </div>
-
+<br><br><br>
     <!-- IAM USING TAILWIND CSS TO STYLE THE TABLE. -->
     <table class="p-10">
         <thead>
