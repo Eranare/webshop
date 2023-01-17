@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Customer;
 class CartController extends Controller
 {
     //
@@ -64,4 +64,16 @@ class CartController extends Controller
 
         return redirect()->route('cart.list');
     }
+    public function checkOutCart(){
+        $cartItems = \Cart::getContent();
+        return view('checkout.checkout', compact('cartItems'));
+
+    }
+    public function payCart(){
+        $cartItems = \Cart::getContent();
+        $personData = Customer::customerStore();
+        return view('checkout.payment', compact('cartItems', 'PersonData'));
+
+    }
 }
+
