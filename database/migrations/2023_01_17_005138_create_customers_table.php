@@ -15,9 +15,20 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->text('name');
-            $table->text('');
- //Address etc
+            $table->text('first_name');
+            $table->text('last_name');
+            $table->text('phone1');
+            $table->text('phone2');
+            $table->text('email');
+            $table->text('Address1');
+            $table->text('house_number1');
+            $table->text('postal_code1');
+            $table->text('city1');
+            $table->text('Address2')->nullable();
+            $table->text('house_number2')->nullable();
+            $table->text('postal_code2')->nullable();
+            $table->text('city2')->nullable();
+ 
             $table->timestamps();
         });
     }
