@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Customer;
+use App\models\Order;
 class CartController extends Controller
 {
     //
@@ -65,15 +66,29 @@ class CartController extends Controller
         return redirect()->route('cart.list');
     }
     public function checkOutCart(){
+
         $cartItems = \Cart::getContent();
+
         return view('checkout.checkout', compact('cartItems'));
 
     }
-    public function payCart(){
+    public function payCart(Request $request){
+        $order = new Order();
         $cartItems = \Cart::getContent();
-        $personData = Customer::customerStore();
-        return view('checkout.payment', compact('cartItems', 'PersonData'));
+
+        return redirect()->route('cart.postCheckout', compact('cartItems' ));
 
     }
-}
+    public function postCheckout(Request $request){
+     
+        $cart = \Cart::getContent();
+        $order = new Order();
+       
+        $order->cart = serialize($cart);
+        $order->address1 = $request->input('address1');
+        $order->name = $request->input('first_name');
 
+        \Cart::clear();
+        return view('checkout.confirm');
+        }
+}

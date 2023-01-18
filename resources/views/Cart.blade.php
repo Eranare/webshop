@@ -81,10 +81,15 @@ Back button somewhere here
                             @csrf
                             <button class="px-6 py-2 text-red-800 bg-red-300">Remove All Cart</button>
                           </form>
+                          @if (Cart::getTotal() <= 0)
+                          <form action="#">
+                            <button class="px-6 py-2 text-green-800 bg-green-300">Checkout</button>
+                          </form> 
+                          @else
                           <form action="{{ route('cart.checkout') }}">
-                          
                             <button class="px-6 py-2 text-green-800 bg-green-300">Checkout</button>
                           </form>
+                          @endif
                         </div>
                       </div>
                     </div>

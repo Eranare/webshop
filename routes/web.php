@@ -51,6 +51,8 @@ Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove'
 Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
 Route::get('checkout', [CartController::class, 'checkOutCart'])->name('cart.checkout');
 Route::get('Pay', [Cartcontroller::class, 'payCart'])->name('cart.pay');
+Route::get('postCheckout', [CartController::class, 'postCheckout'])->name('cart.postCheckout');
+
 
 //--------------------Admin
 
