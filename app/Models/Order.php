@@ -14,4 +14,5 @@ class Order extends Model
             return $this->belongsTo('App\Models\Customer', 'id');
         }
     }
+    protected $fillable = ['cart',];
 }

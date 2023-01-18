@@ -5,7 +5,9 @@ push button sends to confirm
 -->
 ${{ Cart::getTotal() }}
 <br>
-First name: {{$personsData}}
-<br>
 
-<button> confirm</button>
+
+<br>
+<form action="{{ route('cart.postCheckout') }}" method="GET" enctype="multipart/form-data">
+<button> confirm </button>
+</form>

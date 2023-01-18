@@ -73,20 +73,38 @@ class CartController extends Controller
 
     }
     public function payCart(Request $request){
+
         $order = new Order();
+        
         $cartItems = \Cart::getContent();
+        $order->cart = serialize($cartItems);
+        $customer = new Customer();
+        $customer->first_name = $request->input('first_name');
+        $customer->last_name = $request->input('last_name');
+        $customer->phone1 = $request->input('phone1'); 
+        $customer->phone2 = $request->input('phone2');
+        $customer->email = $request->input('email');
+        $customer->Address1 = $request->input('Address1');
+        $customer->house_number1 = $request->input('house_number1');
+        $customer->postal_code1 = $request->input('postal_code1');
+        $customer->city1 = $request->input('city1');
+        $customer->Address2 = $request->input('Address2');
+        $customer->house_number2 = $request->input('house_number2');
+        $customer->postal_code2 = $request->input('postal_code2');
+        $customer->city2 = $request->input('city2');
+        Order::create($request->all());
+        Customer::create($request->all());
 
-        return redirect()->route('cart.postCheckout', compact('cartItems' ));
+        return view('checkout.payment', compact('cartItems', 'order' ));
 
+        
     }
+    //---
     public function postCheckout(Request $request){
      
-        $cart = \Cart::getContent();
-        $order = new Order();
-       
-        $order->cart = serialize($cart);
-        $order->address1 = $request->input('address1');
-        $order->name = $request->input('first_name');
+        
+        
+
 
         \Cart::clear();
         return view('checkout.confirm');
