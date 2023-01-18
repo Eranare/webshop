@@ -2,12 +2,12 @@
 
 @section('content')
 
-<div class="row">
+<div class="row w-10/12">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h1 class="text-xl">Products page</h1>
             </div>
-            <div class="pull-right text-center">
+            <div class="pull-right text-right">
                 <a class="btn btn-success" href="{{ route('adminproduct.create') }}" style="position: fixed"> Create New Product</a>
             </div>
             @if (session('success'))
