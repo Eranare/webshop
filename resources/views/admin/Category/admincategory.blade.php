@@ -2,21 +2,21 @@
 
 @section('content')
 
-<div class="row">
+<div class="row w-10/12">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h1 class="text-xl">Categories page</h1>
             </div>
-            <div class="pull-right text-center">
+            <div class="pull-right text-end">
                 <a class="btn btn-success" href="{{ route('admincategory.create') }}" style="position: fixed"> Create New Category</a>
             </div>
             @if (session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
             @endif
         </div>
-    </div>
+</div>
 <br><br><br>
     <!-- IAM USING TAILWIND CSS TO STYLE THE TABLE. -->
     <table class="p-10">
