@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('name');
             $table->text('price');
             $table->text('quantity');
+            //Product->stock - order->quantity;
             $table->text('subtotal_price');
             $table->text('order_id');
 /*            $table->foreignId('');
