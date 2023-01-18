@@ -28,8 +28,8 @@ Route::get('/photos', function () {
 });
 
 
-Route::get('/', [CategoryController::class, 'index']); 
-
+Route::get('/', [CategoryController::class, 'index']);
+Route::get('/home', [CategoryController::class, 'index']);
 
 Route::resource('/categories', CategoryController::class);
 /*
