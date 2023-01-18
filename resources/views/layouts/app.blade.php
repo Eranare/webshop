@@ -20,7 +20,8 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <div class="container" style="position: fixed">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm w-screen">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -75,11 +76,13 @@
                 </div>
             </div>
         </nav>
+    </div>
 
         @if (Auth::user())
     <div class="container-fluid">
     <div class="row min-vh-100 flex-column flex-md-row">
         <aside class="col-12 col-md-2 p-10 bg-dark flex-shrink-2">
+            <br>
         <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2" style="position: fixed">
             <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
                 <li class="nav-item">
@@ -102,6 +105,7 @@
         </aside>
 
         <main class="col bg-faded py-3 flex-grow-1">
+            <br><br>
             @yield('content')
         </main>
     </div>
