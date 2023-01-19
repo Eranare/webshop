@@ -51,8 +51,13 @@ class AdminProductController extends Controller
             'price' => 'required',
             'category_id' => 'required',
         ]);
+        $product = Product::create($request->except('_token'));
 
-        Product::create($request->all());
+        $path = $request->file('photo')->store('photos/Products', 'public');
+
+        $product->photo = $path;
+
+        $product->save();
 
         return redirect()->route('adminproduct.index')
             ->with('success', 'Product added successfully');

@@ -38,6 +38,8 @@ Category {{$category->name}}
             
         </div>
         Description: {{$product->description}}
+        Ingredients: {{$product->ingredients}}
+
     </div>
 </div>
 </li>

@@ -47,7 +47,15 @@ class AdminCategoryController extends Controller
             'description' => 'required',
         ]);
 
-        Category::create($request->all());
+        $category = Category::create($request->except('_token'));
+
+        $path = $request->file('photo')->store('photos', 'public');
+
+        $category->photo = $path;
+
+        $category->save();
+
+
 
         return redirect()->route('admincategory.index')
             ->with('success', 'Category added successfully');

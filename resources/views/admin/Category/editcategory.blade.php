@@ -26,7 +26,7 @@
         </div>
     @endif
   
-    <form action="{{ route('admincategory.update',$category->id) }}" method="POST">
+    <form action="{{ route('admincategory.update',$category->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
    
@@ -40,7 +40,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Photo:</strong>
-                    <input type="text" name="photo" class="form-control" placeholder="photo" value="{{ $category->photo }}">
+                    <input type="file" name="photo" accept="image/png, image/gif, image/jpeg, image/jpg" class="form-control" placeholder="photo" value="{{ $category->photo }}">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
