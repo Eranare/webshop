@@ -38,31 +38,37 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Photo:</strong>
-                <textarea class="form-control" style="height:50px" name="photo" placeholder="photo"></textarea>
+                <input type="text" name="photo" class="form-control" placeholder="photo">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Description:</strong>
-                <textarea class="form-control" style="height:50px" name="description" placeholder="description"></textarea>
+                <textarea type="text" name="description" class="form-control" placeholder="description"></textarea>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Ingredients:</strong>
+                <textarea type="text" name="ingredients" class="form-control" placeholder="ingredients"></textarea>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Stock:</strong>
-                <textarea class="form-control" style="height:50px" name="stock" placeholder="stock"></textarea>
+                <input type="number" name="stock" class="form-control" placeholder="stock">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Price:</strong>
-                <textarea class="form-control" style="height:50px" name="price" placeholder="price"></textarea>
+                <input type="number" name="price" class="form-control" placeholder="price">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>category_id:</strong>
-                <textarea class="form-control" style="height:50px" name="category_id" placeholder="category_id"></textarea>
+                <input type="number" name="category_id" class="form-control" placeholder="category_id">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

@@ -46,6 +46,7 @@ class AdminProductController extends Controller
             'name' => 'required',
             'photo' => 'required',
             'description' => 'required',
+            'ingredients' => 'required',
             'stock' => 'required',
             'price' => 'required',
             'category_id' => 'required',
@@ -92,6 +93,16 @@ class AdminProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required',
+            'photo' => 'required',
+            'description' => 'required',
+            'ingredients' => 'required',
+            'stock' => 'required',
+            'price' => 'required',
+            'category_id' => 'required',
+        ]);
+        
         $product = Product::findOrFail($id);
 
         $product->update($request->all());

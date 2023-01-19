@@ -34,19 +34,19 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Category name:</strong>
-                    <input type="text" name="name" value="{{ $category->name }}" class="form-control" placeholder="name">
+                    <input type="text" name="name" class="form-control" placeholder="name" value="{{ $category->name }}">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Photo:</strong>
-                    <input type="text" name="photo" value="{{ $category->photo }}" class="form-control" placeholder="photo">
+                    <input type="text" name="photo" class="form-control" placeholder="photo" value="{{ $category->photo }}">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Description:</strong>
-                    <input type="text" name="description" value="{{ $category->description }}" class="form-control" placeholder="description">
+                    <textarea type="text" name="description" class="form-control" placeholder="description">{{ $category->description }}</textarea>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

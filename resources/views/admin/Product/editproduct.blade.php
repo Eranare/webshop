@@ -33,37 +33,43 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Product name:</strong>
-                    <input type="text" name="name" value="{{ $product->name }}" class="form-control" placeholder="name">
+                    <input type="text" name="name" class="form-control" placeholder="name" value="{{ $product->name }}">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Photo:</strong>
-                    <input type="text" name="photo" value="{{ $product->photo }}" class="form-control" placeholder="photo">
+                    <input type="text" name="photo" class="form-control" placeholder="photo" value="{{ $product->photo }}">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Description:</strong>
-                    <input type="text" name="description" value="{{ $product->description }}" class="form-control" placeholder="description">
+                    <textarea name="description" class="form-control" placeholder="description">{{ $product->description }}</textarea>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>ingredients:</strong>
+                    <textarea name="ingredients" class="form-control" placeholder="ingredients">{{ $product->ingredients }}</textarea>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Stock:</strong>
-                    <input type="text" name="stock" value="{{ $product->stock }}" class="form-control" placeholder="stock">
+                    <input type="number" name="stock" class="form-control" placeholder="stock" value="{{ $product->stock }}">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Price:</strong>
-                    <input type="text" name="price" value="{{ $product->price }}" class="form-control" placeholder="price">
+                    <input type="number" name="price" class="form-control" placeholder="price" value="{{ $product->price }}">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>category_id:</strong>
-                    <input type="text" name="category_id" value="{{ $product->category_id }}" class="form-control" placeholder="category_id">
+                    <input type="number" name="category_id" class="form-control" placeholder="category_id" value="{{ $product->category_id }}">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

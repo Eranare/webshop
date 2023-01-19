@@ -38,13 +38,13 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Photo:</strong>
-                <textarea class="form-control" style="height:50px" name="photo" placeholder="photo"></textarea>
+                <input type="text" name="photo" class="form-control" placeholder="photo">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Description:</strong>
-                <textarea class="form-control" style="height:50px" name="description" placeholder="description"></textarea>
+                <textarea type="text" name="description" class="form-control" placeholder="description" style="height:100px"></textarea>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

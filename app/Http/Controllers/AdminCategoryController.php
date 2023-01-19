@@ -87,6 +87,12 @@ class AdminCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required',
+            'photo' => 'required',
+            'description' => 'required',
+        ]);
+        
         $category = Category::findOrFail($id);
 
         $category->update($request->all());
