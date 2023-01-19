@@ -116,6 +116,7 @@
     </div>
         @elseif(!Auth::user())
         <main class="col bg-faded py-3 flex-grow-1">
+            <br><br><br>
             @yield('content2')
         </main>
     @endif
