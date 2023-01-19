@@ -97,19 +97,25 @@ class AdminCategoryController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'photo' => 'required',
             'description' => 'required',
         ]);
         
         $category = Category::findOrFail($id);
 
-        $category->update($request->all());
+        $category->update($request->except('photo'));
+
+        if($request->hasFile('photo')){
+            $path = $request->file('photo')->store('photos', 'public');
+        
+            $category->photo = $path;
+        }
 
         $category->save();
 
         return redirect()->route('admincategory.index')
             ->with('success', 'Category updated successfully');
     }
+
 
     /**
      * Remove the specified resource from storage.

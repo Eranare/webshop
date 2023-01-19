@@ -100,7 +100,6 @@ class AdminProductController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'photo' => 'required',
             'description' => 'required',
             'ingredients' => 'required',
             'stock' => 'required',
@@ -110,7 +109,12 @@ class AdminProductController extends Controller
         
         $product = Product::findOrFail($id);
 
-        $product->update($request->all());
+        $product->update($request->except('photo'));
+if($request->hasFile('photo')){
+        $path = $request->file('photo')->store('photos/Products', 'public');
+    
+        $product->photo = $path;
+    }
 
         $product->save();
 
