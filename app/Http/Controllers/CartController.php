@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Customer;
 use App\models\Order;
+use App\models\Product;
 class CartController extends Controller
 {
     //
@@ -105,7 +106,15 @@ class CartController extends Controller
             'price'=> \Cart::getTotal(),
             'payment_id'=>'order'.rand(1000, 9999),
         ]);
-       
+       //Loop through cart items to deduct cart quantity from product stock
+       foreach ($cartItems as $item){
+            $id = $item->id;
+            $prodstock  =  Product::findOrFail($id);
+            $prodstock->stock -= $item->quantity;
+            $prodstock->save();
+        
+       } 
+
 
         return view('checkout.payment', compact('cartItems'));
 
@@ -114,7 +123,7 @@ class CartController extends Controller
     //---
     public function postCheckout(Request $request){
      
-        
+
         
 
 
