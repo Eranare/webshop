@@ -15,15 +15,10 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreinId('product_id');
-            $table->text('name');
+            $table->foreignId('customer_id');
+            $table->text('cart');
             $table->text('price');
-            $table->text('quantity');
-            //Product->stock - order->quantity;
-            $table->text('subtotal_price');
-            $table->text('order_id');
-/*            $table->foreignId('');
-            $table->unsignedBigInteger('order_id'); */
+            $table->text('payment_id');
             $table->timestamps();
         });
     }
