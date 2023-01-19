@@ -10,6 +10,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\AdminCategoryController;
+use App\Http\Controllers\AngularController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,7 @@ use App\Http\Controllers\AdminCategoryController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::any('/{any}', [AngularController::class, 'index'])->where('any', '^(?!api).*$');
 
 
 Route::get('/photos', function () {
