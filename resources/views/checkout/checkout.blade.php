@@ -9,6 +9,7 @@ Fill in data
                         <input type="text" placeholder="first name" value='' name="first_name">Req<br>
                         <input type="text" placeholder="last name" value='' name="last_name">Req<br>
                         <input type="number" placeholder="primary phone"value='' name="phone1">Req<br>
+                        <input type="text" placeholder="email" value='' name="email">Req<br>
                         <input type="number" placeholder="secondary phone" value='' name="phone2"><br> <!-- dit werkte niet qua link, nu wel-->
                         <input type="text" placeholder="address 1" value='' name="address1">Req<br>
                         <input type='text' placeholder='House number 1' value='' name='house_number1'>Req<br>
@@ -30,6 +31,7 @@ Fill in data
 
                             Please confirm shipping Address and payment option <br>
                             Payment option:
+                            
                             <select id ='payment option'><option>iDeal </option>
                             <option>CreditCard  </option>
                             <option>DebitCard</option></select>
@@ -38,7 +40,7 @@ Fill in data
                                 <option value='INGB'>INGB</option>
                             </select>
                             
-                            <button class="px-6 py-2 text-green-800 bg-green-300">Confirm</button>
+                            <button type='submit' class="px-6 py-2 text-green-800 bg-green-300">Confirm</button>
                           </form>
 @endsection
 
