@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('body')
-@extends('partials.basket')
+
 <br>
 back button here.
 <br>
@@ -33,5 +33,5 @@ Category ID : {{$category->id}}
 </li>
 @endforeach
 </ul>
-
+@extends('partials.basket')
 @endsection

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('customer_id');
             $table->text('cart');
             $table->text('price');
-            $table->text('payment_id');
+            $table->text('payment_id')->nullable();
             $table->timestamps();
         });
     }

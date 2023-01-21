@@ -1,9 +1,9 @@
 @extends('layout.app')
 
+
 @section('body')
 
 @extends('partials.basket')
-
 Home stuff here <br>
 welcome to the shop
 
