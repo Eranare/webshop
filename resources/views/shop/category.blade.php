@@ -1,7 +1,11 @@
 @extends('layout.app')
-
+@section('title', $category->name)
 @section('body')
 
+<nav class="container">
+    <a href="{{route('categories.index')}}">Home</a> ->
+    <a href="#">{{$category->name}}</a>
+</nav>
 <br>
 back button here.
 <br>

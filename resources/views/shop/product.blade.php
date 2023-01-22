@@ -1,9 +1,16 @@
 @extends('layout.app')
-
+@section('title', $product->name)
 @section('body')
 @extends('partials.basket')
 
-Back button
+
+<nav class="cotainer">
+    <a href="{{route('categories.index')}}">Home</a> ->
+    <a href="{{route('categories.show', $category->id)}}">{{$category->name}}</a> ->
+    
+    <a href="#">{{$product->name}}</a>
+</nav>
+
 <br>
 category van product moet hier ergens staan
 

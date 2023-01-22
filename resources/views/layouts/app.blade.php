@@ -20,6 +20,7 @@
 </head>
 <body class="h-full"> 
     <div id="app">
+        
         <div class="container w-screen fixed">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm w-screen">
             <div class="container">
