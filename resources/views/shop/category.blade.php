@@ -9,7 +9,9 @@
 
 
     Current catagory image
-    <img src ="{{ url('storage/'.$category->photo) }}"> <!--Current Category image-->
+<div class= "rounded">
+    <img class="rounded-xl h-15 w-15  " width='300px' height='200px'src ="{{ url('storage/'.$category->photo) }}"> <!--Current Category image-->
+</div>
 <div class="h-15 w-15 square-full overflow-hidden bg-cyan-50 bg-opacity-25">
     <ul>
     @foreach ($category->products as $product)
