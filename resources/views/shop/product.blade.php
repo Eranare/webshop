@@ -4,19 +4,18 @@
 @extends('partials.basket')
 
 
-<nav class="cotainer">
+<nav class="cotainer border">
     <a href="{{route('categories.index')}}">Home</a> ->
     <a href="{{route('categories.show', $category->id)}}">{{$category->name}}</a> ->
     
     <a href="#">{{$product->name}}</a>
 </nav>
 
-<br>
-category van product moet hier ergens staan
 
-<br>
+
+
 Product page
-Category {{$category->name}}
+
 <ul>
 <li>
 <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
