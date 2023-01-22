@@ -24,7 +24,7 @@
         </div>
         <main>
             
-            <button class="buttonbasket group  h-05 w-32 overflow-hidden rounded-lg bg-white text-lg shadow float-right sticky top-20 z-50" > 
+            <button class="buttonbasket group  h-05 w-32 overflow-hidden rounded-lg bg-white text-xl shadow float-right sticky top-60 z-50" > 
                 <div class="absolute inset-0 w-3 bg-amber-400 transition-all duration-[250ms] ease-out group-hover:w-full"> </div>
                     <span class="relative text-black group-hover:text-white">                <a href="{{ route('cart.list') }}" class="flex items-center">
                         <p><svg class="w-10 h-10" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">

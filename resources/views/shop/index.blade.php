@@ -77,7 +77,7 @@ Pexels voor pictures
 
 <h1>Show alles </h1>
 <br>
-<div class="container border 2px">    
+<div class="container border ">    
     <ul class="grid grid-cols-8 gap-6   ">
     @foreach ($categories as $category)
     @foreach ($category->products as $product)
