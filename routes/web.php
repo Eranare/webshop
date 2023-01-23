@@ -60,6 +60,8 @@ Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/admin/product', [AdminProductController::class, 'index']);
 
 Route::get('/admin/category', [AdminCategoryController::class, 'index']);
+
+Route::get('/admin/statistics', [AdminController::class, 'showStatistics'])->name('admin.showStatistics');
 Route::resource('admin', AdminController::class);
 Route::resource('adminproduct', AdminProductController::class);
 Route::resource('admincategory', AdminCategoryController::class);

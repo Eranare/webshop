@@ -103,8 +103,10 @@ class CartController extends Controller
         Order::create([
             'customer_id'=>$customer->id,
             'cart'=> $order->cart,
-            'price'=> \Cart::getTotal(),
             'payment_id'=>'order'.rand(1000, 9999),
+            'orderstatus'=> 1,
+            'price'=> \Cart::getTotal(),
+
         ]);
        //Loop through cart items to deduct cart quantity from product stock
        foreach ($cartItems as $item){

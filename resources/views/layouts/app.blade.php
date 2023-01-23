@@ -91,7 +91,7 @@
                     <a class="nav-link pl-0" href ="#"></i><span class="d-none d-md-inline text-slate-400"> To Top
                     </span></a></li>
                 <li class="nav-item">
-                    <a class="nav-link pl-0" href ="#"></i><span class="d-none d-md-inline text-slate-400"> Statistics
+                    <a class="nav-link pl-0" href ="{{route('admin.showStatistics')}}"></i><span class="d-none d-md-inline text-slate-400"> Statistics
                     </span></a></li>
                 <li class="nav-item">
                     <a class="nav-link pl-0" href ="#"></i><span class="d-none d-md-inline text-slate-400"> Completed Orders
