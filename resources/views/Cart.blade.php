@@ -2,6 +2,11 @@
 
 
 @section('body')
+<style>
+.buttonbasket{
+  display:none;
+} 
+</style>
 Back button somewhere here
           <main class="my-8">
             <div class="container px-6 mx-auto">

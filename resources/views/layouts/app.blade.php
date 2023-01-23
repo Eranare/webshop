@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full bg-gray-100">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,8 +18,9 @@
     <script src ="https://cdn.tailwindcss.com"></script>
 
 </head>
-<body>
+<body class="h-full"> 
     <div id="app">
+        
         <div class="container w-screen fixed">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm w-screen">
             <div class="container">
@@ -90,14 +91,21 @@
                     <a class="nav-link pl-0" href ="#"></i><span class="d-none d-md-inline text-slate-400"> To Top
                     </span></a></li>
                 <li class="nav-item">
+
                     <a class="nav-link pl-0" href ="{{ route('adminpending.index') }}"></i><span class="d-none d-md-inline text-slate-400"> Pending Orders
                     </span></a></li>
                 <li class="nav-item">
                     <a class="nav-link pl-0" href ="#"></i><span class="d-none d-md-inline text-slate-400"> Statistics
+
+                    <a class="nav-link pl-0" href ="{{route('admin.showStatistics')}}"></i><span class="d-none d-md-inline text-slate-400"> Statistics
+
                     </span></a></li>
                 <li class="nav-item">
                     <a class="nav-link pl-0" href ="{{ route('admincompleted.index') }}"></i><span class="d-none d-md-inline text-slate-400"> Completed Orders
                     </span></a></li>
+                <li class="nav-item">
+                    <a class="nav-link pl-0" href ="#"></i><span class="d-none d-md-inline text-slate-400"> Pending Orders
+                    </span></a></li>    
                 <li class="nav-item">
                     <a class="nav-link pl-0" href="{{ route('adminproduct.index') }}"></i><span class="d-none d-md-inline text-slate-400"> Product Management
                     </span></a></li>

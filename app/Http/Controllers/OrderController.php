@@ -35,5 +35,6 @@ class OrderController extends Controller
 
         return view('admin.pending.showpending', compact('order'));
     }
+
 }
 
