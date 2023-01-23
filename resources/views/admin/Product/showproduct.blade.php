@@ -24,6 +24,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Photo:</strong>
+                <img class="h-full object-cover" src="{{ url('storage/'.$product->photo) }}" width='300px' height='200px' >
                 {{ $product->photo }}
             </div>
         </div>
@@ -68,6 +69,9 @@
                 <strong>updated_at:</strong>
                 {{ $product->updated_at }}
             </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+            <a class="bg-yellow-300 px-3 py-2 rounded shadow-md" href="{{ route('adminproduct.edit',$product->id) }}"> edit </a>
+        </div>
         </div>
     </div>
 @endsection
