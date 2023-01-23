@@ -50,7 +50,7 @@
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-              <button type="submit" class="bg-blue-200 px-3 py-2 rounded shadow-md">Submit</button>
+              <button type="submit" class="bg-yellow-200 px-3 py-2 rounded shadow-md">Submit</button>
             </div>
         </div>
    

@@ -48,13 +48,13 @@
                     <a class="bg-blue-200 px-3 py-2 rounded shadow-md" href="{{ route('admincategory.show',$category->id) }}"> details </a>
                 </td>
                 <td class="truncate p-2">
-                    <a class="bg-blue-200 px-3 py-2 rounded shadow-md" href="{{ route('admincategory.edit',$category->id) }}"> edit </a>
+                    <a class="bg-yellow-300 px-3 py-2 rounded shadow-md" href="{{ route('admincategory.edit',$category->id) }}"> edit </a>
                 </td>
                 <form action="{{ route('admincategory.destroy',$category->id) }}" method="POST">
                 <td class="truncate p-2">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="bg-blue-200 px-3 py-2 rounded shadow-md"> destroy </button>
+                    <button type="submit" class="bg-red-400 px-3 py-2 rounded shadow-md"> destroy </button>
                 </td>
                 </form>
             </tr>
