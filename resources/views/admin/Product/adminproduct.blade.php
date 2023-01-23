@@ -27,6 +27,7 @@
                 <th class="bg-blue-300 p-2 text-bold">Name</th>
                 <th class="bg-blue-300 p-2 text-bold">Photo</th>
                 <th class="bg-blue-300 p-2 text-bold">Stock</th>
+                <th class="bg-blue-300 p-2 text-bold">Pending order</th>
                 <th class="bg-blue-300 p-2 text-bold">Price</th>
                 <th class="bg-blue-300 p-2 text-bold">category_id</th>
                 <th class="bg-blue-300 p-2 text-bold">Created</th>
@@ -45,6 +46,7 @@
                 <td class="truncate p-2">{{ $product->name }}</td>
                 <td class="truncate p-2">{{ $product->photo }}</td>
                 <td class="truncate p-2">{{ $product->stock }}</td>
+                <td class="truncate p-2">0</td>
                 <td class="truncate p-2">{{ $product->price }}</td>
                 <td class="truncate p-2">{{ $product->category_id }}</td>
                 <td class="truncate p-2">{{ $product->created_at }}</td>
