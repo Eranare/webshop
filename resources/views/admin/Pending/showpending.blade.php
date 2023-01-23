@@ -30,12 +30,16 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>cart:</strong>
-                {{ unserialize($order->cart) }}
+                @foreach($products as $product)
+                Product: {{$product->name}}
+                Price per piece: ${{$product->price}}
+                amount: {{$product->quantity}}
+                @endforeach
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>price:</strong>
+                <strong>Total price:</strong>
                 {{ $order->price }}
             </div>
         </div>

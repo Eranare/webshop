@@ -17,7 +17,7 @@ class OrderController extends Controller
     {
        if (Auth::check()) {
         $pendingorders = Order::all()->where('orderstatus', '=', 1);
-
+           
         return view('admin.pending.adminpending')->with('pendingorders',$pendingorders); 
        }
        else return view('auth.login');
@@ -59,8 +59,9 @@ class OrderController extends Controller
     {
         if (Auth::check()) {
             $order = Order::findOrFail($id);
-
-            return view('admin.pending.showpending', compact('order'));
+            $productscart = $order->cart;
+            $products = unserialize($productscart);
+            return view('admin.pending.showpending', compact('order', 'products'));
         }
         else return view('auth.login');
     }
