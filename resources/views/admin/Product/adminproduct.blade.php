@@ -62,7 +62,7 @@
                 <td class="truncate p-2">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="bg-red-300 px-3 py-2 rounded shadow-md"> destroy </button>
+                    <button type="submit" class="bg-red-400 px-3 py-2 rounded shadow-md"> destroy </button>
                 </td>
                 </form>
             </tr>

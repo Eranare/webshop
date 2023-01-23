@@ -109,14 +109,14 @@
         </nav>
         </aside>
 
-        <main class="col bg-faded py-3 flex-grow-1">
+        <main class="col bg-gray-100 py-3 flex-grow-1">
             <br><br>
             @yield('content')
         </main>
     </div>
     </div>
         @elseif(!Auth::user())
-        <main class="col bg-faded py-3 flex-grow-1">
+        <main class="col bg-gray-100 py-3 flex-grow-1">
             <br><br><br>
             @yield('content2')
         </main>
