@@ -42,7 +42,7 @@
                     <a class="bg-blue-200 px-3 py-2 rounded shadow-md" href="{{ route('adminpending.show',$order->id) }}"> details </a>
                 </td>
 
-                <form action="{{ route('order.complete',$order->id) }}" method="POST">
+                <form action="{{ route('order.complete', $order->id) }}" method="POST">
                 <td class="truncate p-2">
                     @csrf
                     

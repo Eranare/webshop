@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
  use App\models\Order;
-
 use \Illuminate\Support\Facades\Auth;
+
 class OrderController extends Controller
 {
     /**
@@ -22,12 +22,31 @@ class OrderController extends Controller
        }
        else return view('auth.login');
     }
+    
+        /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
 
-    public function setCompleted(){
+    public function setCompleted($id)
+    {
+        if (Auth::check()) {
+            $order=Order::findOrFail($id);
+            $order->orderstatus = 2;
+            $order->save();
+            $pendingorders = Order::all()->where('orderstatus', '=', 1);
 
-    }
-    public function setCancelled(){
+            return redirect()->route('admincategory.index');
+            
         
+        } 
+        else return view('auth.login');
+    }
+    
+    public function setCancelled(){
+
     }
 
         /**

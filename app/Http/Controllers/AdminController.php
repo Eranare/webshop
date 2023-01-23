@@ -20,13 +20,6 @@ class AdminController extends Controller
         else return view('auth.login');
     }
 
-    public function showPending(){
-
-    }
-
-    public function showOrders(){
-
-    }
 
     public function showStatistics(){
         if(Auth::check()){
