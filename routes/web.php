@@ -75,6 +75,9 @@ Route::resource('adminpending', OrderController::class);
 // Route::resource('adminstatistics', stats::class);
 Route::resource('admincompleted', OrderController::class);
 
+Route::post('/admin/order',[OrderController::class, 'setCompleted'])->name('order.complete');
+Route::get('/admin/order',[OrderController::class, 'setCancelled'])->name('order.cancel');
+
 Auth::routes();
 
 Route::get('/Adminpanel', [App\Http\Controllers\HomeController::class, 'index'])->name('Adminpanel');

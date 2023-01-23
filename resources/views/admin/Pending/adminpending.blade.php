@@ -22,6 +22,8 @@
                 <th class="bg-blue-300 p-2 text-bold">Created</th>
                 <th class="bg-blue-300 p-2 text-bold">Updated</th>
                 <th class="bg-blue-300 p-2 text-bold">Show</th>
+                <th class="bg-blue-300 p-2 text-bold">Complete</th>
+                <th class="bg-blue-300 p-2 text-bold">Cancel</th>
             </tr>
         </thead>
         <tbody>
@@ -38,6 +40,24 @@
                 <!-- USING THE DETAILS BUTTON WE WILL AN OVERVIEW OF ALL THE DATA. -->
                 <td class="truncate p-2">
                     <a class="bg-blue-200 px-3 py-2 rounded shadow-md" href="{{ route('adminpending.show',$order->id) }}"> details </a>
+                </td>
+
+                <form action="{{ route('order.complete',$order->id) }}" method="POST">
+                <td class="truncate p-2">
+                    @csrf
+                    
+                    <button type="submit" class="bg-green-400 px-3 p-2 text-bold py-2 rounded shadow-md"> complete</button>
+                </td>
+                </form>
+                </td>
+
+                <form action="{{ route('order.cancel',$order->id) }}" method="POST">
+                <td class="truncate p-2">
+                    @csrf
+                    
+                    <button type="submit" class="bg-red-400 px-3 py-2 text-bold rounded shadow-md"> cancelled </button>
+                </td>
+                </form>
                 </td>
             </tr>
             @endforeach

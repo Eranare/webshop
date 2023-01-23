@@ -14,5 +14,5 @@ class Order extends Model
             return $this->belongsTo('App\Models\Customer', 'id');
         }
     }
-    protected $fillable = ['cart', 'customer_id','price'];
+    protected $fillable = ['cart', 'customer_id','price','payment_id', 'orderstatus' ];
 }
