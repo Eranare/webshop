@@ -8,7 +8,7 @@
     
 </head>
 
-<body class="h-full container mx-auto px-2 bg-cyan-50 bg-opacity-25">
+<body class="h-full container mx-auto px-2 bg-cyan-50 bg-opacity-25 sticky">
     <div class="min-h-full">
         <div>
             <header class="container">

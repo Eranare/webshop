@@ -1,7 +1,12 @@
 @extends('layout.app')
 @section('body')
-
-<div ><!--Container voor form -->
+@section('title', 'Checkout')
+<style>
+.buttonbasket{
+  display:none;
+} 
+</style>
+<div class="container border w-1/3" ><!--Container voor form -->
  <!-- push address and name etc into customer session data-->
 Fill in data
  <form action="{{ route('cart.pay') }}" method="POST" enctype="multipart/form-data">
@@ -25,10 +30,10 @@ Fill in data
 </div>
 
 <div><!--Container voor mini cart lijst -->
-<div>
+  <div>
                          Total: ${{ Cart::getTotal() }}                        
-</div>
-
+  </div>
+  <div>
                             Please confirm shipping Address and payment option <br>
                             Payment option:
                             
@@ -42,5 +47,11 @@ Fill in data
                             
                             <button type='submit' class="px-6 py-2 text-green-800 bg-green-300">Confirm</button>
                           </form>
+  </div>
+  <div class="float-r container w-1/3 border">
+    Shopping list
+  </div>
+</div>
+
 @endsection
 

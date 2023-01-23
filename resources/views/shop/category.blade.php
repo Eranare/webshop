@@ -8,11 +8,11 @@
 </nav>
 
 
-    Current catagory image
+    Current category image
 <div class= "rounded">
     <img class="rounded-xl h-15 w-15  " width='300px' height='200px'src ="{{ url('storage/'.$category->photo) }}"> <!--Current Category image-->
 </div>
-<div class="container h-15 w-15 square-full overflow-hidden bg-cyan-50 bg-opacity-25">
+<div class="container h-15 w-15 square-full overflow-hidden bg-black bg-opacity-25 sticky">
     <ul>
     @foreach ($category->products as $product)
     <li>
@@ -20,7 +20,7 @@
 
         <div class="mt-1 sm:mt-0 sm:col-span-2">
             <div class ="flex items-center"> 
-                <span class="h-15 w-15 square-full overflow-hidden bg-gray-100">
+                <span class="h-15 w-15 square-full overflow-hidden ">
                     <a href="{{route('products.show', $product->id)}}"><img class="h-full object-cover" src="{{ url('storage/'.$product->photo) }}" width='300px' height='200px' ></a>
                 </span>
                 <div class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
