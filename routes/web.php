@@ -10,6 +10,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\AdminCategoryController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,13 +59,21 @@ Route::get('postCheckout', [CartController::class, 'postCheckout'])->name('cart.
 
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/admin/product', [AdminProductController::class, 'index']);
-
 Route::get('/admin/category', [AdminCategoryController::class, 'index']);
 
+Route::get('/admin/pending', [OrderController::class, 'index']);
+// Route::get('/admin/statistics', [stats::class, 'index']);
+Route::get('/admin/completed', [OrderController::class, 'index']);
+
+
 Route::get('/admin/statistics', [AdminController::class, 'showStatistics'])->name('admin.showStatistics');
+
 Route::resource('admin', AdminController::class);
 Route::resource('adminproduct', AdminProductController::class);
 Route::resource('admincategory', AdminCategoryController::class);
+Route::resource('adminpending', OrderController::class);
+// Route::resource('adminstatistics', stats::class);
+Route::resource('admincompleted', OrderController::class);
 
 Auth::routes();
 
