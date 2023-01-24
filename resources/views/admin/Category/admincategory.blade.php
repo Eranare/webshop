@@ -25,7 +25,6 @@
             <tr class="text-lg">
                 <th class="bg-blue-300 p-2 text-bold">id</th>
                 <th class="bg-blue-300 p-2 text-bold">Name</th>
-                <th class="bg-blue-300 p-2 text-bold">Photo</th>
                 <th class="bg-blue-300 p-2 text-bold">Created</th>
                 <th class="bg-blue-300 p-2 text-bold">Updated</th>
                 <th class="bg-blue-300 p-2 text-bold">Show</th>
@@ -39,8 +38,7 @@
             @foreach($categories as $category)
             <tr class="text-md p-2 w-3 border border-solid border-blue-600 border-1">
                 <td class="truncate p-2">{{ $category->id }}</td>
-                <td class="truncate p-2">{{ $category->name }}</td>
-                <td class="truncate p-2">{{ $category->photo }}</td>
+                <td class="truncate p-2">{{ Str::limit($category->name, 15) }}</td>
                 <td class="truncate p-2">{{ $category->created_at }}</td>
                 <td class="truncate p-2">{{ $category->updated_at }}</td>
                 <!-- USING THE DETAILS BUTTON WE WILL AN OVERVIEW OF ALL THE DATA. -->

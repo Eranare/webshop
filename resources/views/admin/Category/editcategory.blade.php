@@ -41,6 +41,8 @@
                 <div class="form-group">
                     <strong>Photo:</strong>
                     <input type="file" name="photo" accept="image/png, image/gif, image/jpeg, image/jpg" class="form-control" placeholder="photo" value="{{ $category->photo }}">
+                    <strong>Current image:</strong>
+                    <img class="rounded-xl h-15 w-15  " width='100px' height='100px'src ="{{ url('storage/'.$category->photo) }}"> <!--Current Category image-->
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">

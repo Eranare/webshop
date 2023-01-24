@@ -16,7 +16,7 @@
    
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
+            <div class="text-ellipsis overflow-hidden ... box-content w-[32rem] md:box-content">
                 <strong>Name:</strong>
                 {{ $product->name }}
             </div>
@@ -25,17 +25,16 @@
             <div class="form-group">
                 <strong>Photo:</strong>
                 <img class="h-full object-cover" src="{{ url('storage/'.$product->photo) }}" width='300px' height='200px' >
-                {{ $product->photo }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
+            <div class="text-ellipsis overflow-hidden ... box-content w-[59rem] md:box-content">
                 <strong>Description:</strong>
                 {{ $product->description }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
+            <div class="text-ellipsis overflow-hidden ... box-content w-[59rem] md:box-content">
                 <strong>Ingredients:</strong>
                 {{ $product->ingredients }}
             </div>

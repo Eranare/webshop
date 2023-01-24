@@ -29,16 +29,6 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>cart:</strong>
-                @foreach($products as $product)
-                Product: {{$product->name}}
-                Price per piece: ${{$product->price}}
-                amount: {{$product->quantity}}
-                @endforeach
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
                 <strong>Total price:</strong>
                 {{ $order->price }}
             </div>
@@ -53,6 +43,18 @@
             <div class="form-group">
                 <strong>updated_at:</strong>
                 {{ $order->updated_at }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Cart:</strong>
+                @foreach($products as $product)
+                <br>
+                Image: {{$product->image}}
+                Product: {{$product->name}}
+                Price per piece: ${{$product->price}}
+                Amount: {{$product->quantity}}
+                @endforeach
             </div>
         </div>
     </div>
