@@ -50,7 +50,7 @@
                 <strong>Cart:</strong>
                 @foreach($products as $product)
                 <br>
-                Image: {{$product->image}}
+                Image: <img src =" {{ url($product->attributes->image) }}"> </img>
                 Product: {{$product->name}}
                 Price per piece: ${{$product->price}}
                 Amount: {{$product->quantity}}
