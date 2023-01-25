@@ -8,10 +8,15 @@
     
 </head>
 
-<body class="h-full container mx-auto px-2 bg-cyan-50 bg-opacity-25 sticky">
-    <video id='video'autoplay muted loop src = "/storage/Background.mp4"></video>
-    <canvas id="BG" style= "position: fixed; top:0 left:0; z-index:-4;">        </canvas>
+<body class="h-full">
+    
+<video id='video'autoplay="true" muted="true" loop="true" class='fixed  pointer-events-none -z-20 w-full'  src = "/storage/Background.mp4"></video>
+
+    <div class=" container mx-auto px-2 bg-cyan-50 bg-opacity-25 sticky top-0 left-0">
+
+   <!-- <canvas id="BG" style= "position: fixed; top:0 left:0; z-index:-4;">        </canvas>-->
         <div class="min-h-full">
+        
             <div>
                 <header class="container">
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,8 +29,8 @@
         
 
             </div>
-            <main>
-                
+            <main class="backdrop-blur-sm">
+            
                 <button class="buttonbasket group  h-05 w-32 overflow-hidden rounded-lg bg-white text-xl shadow float-right sticky top-60 z-50" > 
                     <div class="absolute inset-0 w-3 bg-amber-400 transition-all duration-[250ms] ease-out group-hover:w-full"> </div>
                         <span class="relative text-black group-hover:text-white">                <a href="{{ route('cart.list') }}" class="flex items-center">
@@ -40,8 +45,6 @@
                 
                 </button>
                 
-                
-
 
 
                 <div class ="#">
@@ -49,19 +52,9 @@
                 </div>
             </main>
         </div>
-
+    </div>
     
-    <script>
-     
-    let canvasE = document.getElementById('BG');
-    let context = canvasE.getContext('2d');
-    let videoE = document.getElementById('video');
-    function updateCanvas(){
-        context.drawImage(videoE, 0, 0, canvasE.width, canvasE.height);
-        window.requestAnimationFrame(updateCanvas);
-    }
-    requestAnimationFrame(updateCanvas);
-</script><!--Script voor background hier -->
+
 </body>
 </html>
 
