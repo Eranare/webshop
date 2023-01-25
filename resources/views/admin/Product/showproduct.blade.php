@@ -24,7 +24,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Photo:</strong>
-                <img class="h-full object-cover" src="{{ url('storage/'.$product->photo) }}" width='300px' height='200px' >
+                <img class="h-full object-cover" src="{{ url('storage/'.$product->photo) }}" width='300px' height='200px'>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

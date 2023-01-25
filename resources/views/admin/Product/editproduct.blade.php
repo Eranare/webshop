@@ -41,7 +41,7 @@
                     <strong>Photo:</strong>
                     <input type="file" name="photo" accept="image/png, image/gif, image/jpeg, image/jpg" class="form-control" placeholder="photo" value="{{ $product->photo }}">
                     <strong>Current image:</strong>
-                    <img class="h-full object-cover" src="{{ url('storage/'.$product->photo) }}" width='100px' height='100px' >
+                    <img class="h-full object-cover" src="{{ url('storage/'.$product->photo) }}" width='100px' height='100px'>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
