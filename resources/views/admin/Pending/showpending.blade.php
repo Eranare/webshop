@@ -3,57 +3,59 @@
 @section('content')
 
 
-<div class="row">
-        <div class="col-lg-12 margin-tb">
+<div>
+        <div>
             <div class="pull-left">
                 <h1 class="text-xl"> Show pending order</h1>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <a class="bg-blue-200 px-3 py-2 m-8 rounded shadow-md" href="{{ route('adminpending.index') }}"> Back</a>
-        </div>
+            <div class="text-center">
+                <a class="bg-blue-200 px-3 py-2 m-8 rounded shadow-md" href="{{ route('adminpending.index') }}"> Back</a>
+            </div>
         </div>
     </div>
    
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
+    <div>
+        <div>
+            <div>
                 <strong>id:</strong>
                 {{ $order->id }}
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
+        <div>
+            <div>
                 <strong>customer_id:</strong>
                 {{ $order->customer_id }}
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
+        <div>
+            <div>
                 <strong>Total price:</strong>
                 {{ $order->price }}
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
+        <div>
+            <div>
                 <strong>created_at:</strong>
                 {{ $order->created_at }}
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
+        <div>
+            <div>
                 <strong>updated_at:</strong>
                 {{ $order->updated_at }}
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
+        <div>
+            <div>
                 <strong>Cart:</strong>
                 @foreach($products as $product)
                 <br>
-                Image: <img class="h-full object-cover" src=" {{ url($product->attributes->image) }}" width='100px' height='100px'>
+                <div class="flex">
+                <a href="{{route('adminproduct.show', $product->id)}}"><img class="p-0 h-full object-cover" src=" {{ url($product->attributes->image) }}" width='100px' height='100px'></a>
                 Product: {{$product->name}}
-                Price per piece: ${{$product->price}}
-                Amount: {{$product->quantity}}
+                <br>Price per piece: ${{$product->price}}
+                <br>Amount: {{$product->quantity}}
+                </div>
                 @endforeach
             </div>
         </div>

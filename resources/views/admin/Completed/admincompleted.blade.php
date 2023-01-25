@@ -9,9 +9,9 @@
             </div>
         </div>
 </div>
-<br><br><br>
+
     <!-- IAM USING TAILWIND CSS TO STYLE THE TABLE. -->
-    <table class="p-10">
+    <table class="my-16">
         <thead>
             <!-- DEFINE ALL THE HEADINGS -->
             <tr class="text-lg">

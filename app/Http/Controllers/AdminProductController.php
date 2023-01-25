@@ -18,8 +18,8 @@ class AdminProductController extends Controller
     {
        if (Auth::check()) {
         $products = Product::all();
-        $category = Category::all();
-        return view('admin.product.adminproduct')->with('products',$products)->with('categories', $category); 
+        $categories = Category::all();
+        return view('admin.product.adminproduct')->with('products',$products)->with('categories', $categories); 
        }
        else return view('auth.login');
     }
@@ -73,8 +73,10 @@ class AdminProductController extends Controller
     public function show($id)
     {
         $product = Product::findOrFail($id);
+        $catid = $product->category_id;
+        $category = Category::findOrFail($catid);
 
-        return view('admin.product.showproduct', compact('product'));
+        return view('admin.product.showproduct')->with('product',$product)->with('category', $category); 
     }
 
     /**
@@ -85,8 +87,9 @@ class AdminProductController extends Controller
      */
     public function edit($id)
     {
+        $categories = Category::all();
         $product = Product::findOrFail($id);
-        return view('admin.product.editproduct', compact('product'));
+        return view('admin.product.editproduct', compact('product','categories'));
     }
 
     /**

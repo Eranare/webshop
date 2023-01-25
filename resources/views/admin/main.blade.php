@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-              Welcome to admin panel
+              <div class="text-2xl">Welcome to the admin panel</div>
 
               
 @endsection

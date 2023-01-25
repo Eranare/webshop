@@ -17,9 +17,9 @@
             @endif
         </div>
     </div>
-<br><br><br>
+
     <!-- IAM USING TAILWIND CSS TO STYLE THE TABLE. -->
-    <table class="p-10">
+    <table class="my-16">
         <thead>
             <!-- DEFINE ALL THE HEADINGS -->
             <tr class="text-lg">
@@ -45,8 +45,13 @@
                 <td class="truncate p-2">{{ Str::limit($product->name, 15) }}</td>
                 <td class="truncate p-2">{{ $product->stock }}</td>
                 <td class="truncate p-2">0</td>
-                <td class="truncate p-2">€{{ $product->price }}</td>
-                <td class="truncate p-2">{{ $product->category_id }}</td>
+                <td class="truncate p-2">${{ $product->price }}</td>
+                <td class="truncate p-2">@foreach($categories as $category)
+                                            @if ($category->id === $product->category_id)
+                                                {{ $category->name }}
+                                            @endif
+                                        @endforeach
+                </td>
                 <td class="truncate p-2">{{ $product->created_at }}</td>
                 <td class="truncate p-2">{{ Str::limit($product->updated_at, 10) }}</td>
                 <!-- USING THE DETAILS BUTTON WE WILL AN OVERVIEW OF ALL THE DATA. -->
