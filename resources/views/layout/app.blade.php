@@ -49,7 +49,7 @@
     </div>
     
     
-    <script src="#"></script><!--Script voor background hier -->
+
 </body>
 </html>
 
