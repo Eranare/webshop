@@ -18,7 +18,7 @@
     <script src ="https://cdn.tailwindcss.com"></script>
 
 </head>
-<body class="h-full"> 
+<body class="h-full bg-gray-100"> 
     <div id="app">
         
         <div class="container w-screen fixed">
@@ -109,15 +109,13 @@
         </nav>
         </aside>
 
-        <main class="col bg-gray-100 py-3 flex-grow-1">
-            <br><br>
+        <main class="col bg-gray-100 py-16 flex-grow-1">
             @yield('content')
         </main>
     </div>
     </div>
         @elseif(!Auth::user())
-        <main class="col bg-gray-100 py-3 flex-grow-1">
-            <br><br><br>
+        <main class="col bg-gray-100 py-32 flex-grow-1">
             @yield('content2')
         </main>
     @endif
