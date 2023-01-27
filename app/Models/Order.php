@@ -14,5 +14,9 @@ class Order extends Model
             return $this->belongsTo('App\Models\Customer', 'id');
         }
     }
-    protected $fillable = ['cart', 'customer_id','price','payment_id', 'orderstatus' ];
+    public function orderProducts()
+    {
+        return $this->hasMany('App\Models\Order_Products','id');
+    }
+    protected $fillable = ['customer_id','price','payment_id', 'orderstatus' ];
 }

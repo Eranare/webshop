@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('photo');
             $table->text('description')->nullable();
             $table->text('ingredients')->nullable();
+            $table->text('allergens')->nullable();
             $table->text('stock');
             $table->text('price');
             $table->foreignId('category_id');
