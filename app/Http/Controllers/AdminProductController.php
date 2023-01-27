@@ -31,7 +31,8 @@ class AdminProductController extends Controller
      */
     public function create()
     {
-        return view('admin.product.createproduct');
+        $categories = Category::all();
+        return view('admin.product.createproduct')->with('categories',$categories);
     }
 
     /**
@@ -47,6 +48,7 @@ class AdminProductController extends Controller
             'photo' => 'required',
             'description' => 'required',
             'ingredients' => 'required',
+            'allergens'=> 'required',
             'stock' => 'required',
             'price' => 'required',
             'category_id' => 'required',
@@ -107,6 +109,7 @@ class AdminProductController extends Controller
             'ingredients' => 'required',
             'stock' => 'required',
             'price' => 'required',
+            'allergens' => 'required',
             'category_id' => 'required',
         ]);
         

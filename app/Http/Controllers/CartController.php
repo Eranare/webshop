@@ -117,6 +117,7 @@ class CartController extends Controller
                 'product_id' => $item->id,
                 'name' => $item->name,
                 'price' => $item->price,
+                'image' =>$item->attributes->image,
                 'quantity' => $item->quantity,
             ]);
             $id = $item->id;

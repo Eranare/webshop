@@ -55,6 +55,15 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
+                <strong>Allergens:</strong>
+                <input type="checkbox" name="allergens" class="form-control">wheat</input>
+                <input type="checkbox" name="allergens" class="form-control"></input>
+                <input type="checkbox" name="allergens" class="form-control"></input>
+                <input type="checkbox" name="allergens" class="form-control"></input>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
                 <strong>Stock:</strong>
                 <input type="number" name="stock" class="form-control" placeholder="stock">
             </div>
@@ -67,8 +76,11 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>category_id:</strong>
-                <input type="number" name="category_id" class="form-control" placeholder="category_id">
+            <strong>Category:</strong>
+                <select name="category_id" class="form-control" placeholder="category_id">
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

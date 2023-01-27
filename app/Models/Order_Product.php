@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class order_Product extends Model
 {
     use HasFactory;
-    public $table = 'order_Products';
+    public $table = 'order_products';
     public function order(){
         {
             return $this->belongsTo('App\Models\Order', 'id');
@@ -17,7 +17,7 @@ class order_Product extends Model
     public function products(){
         return $this->hasMany('App\Models\Products','id');
     }
-    protected $fillable = ['order_id','product_id', 'name', 'price', 'quantity'];
+    protected $fillable = ['order_id','product_id', 'name', 'price', 'image','quantity'];
 
 
 }

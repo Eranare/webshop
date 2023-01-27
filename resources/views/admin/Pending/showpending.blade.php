@@ -23,8 +23,23 @@
         </div>
         <div>
             <div>
-                <strong>customer_id:</strong>
-                {{ $order->customer_id }}
+                <strong>customer_id and name:</strong>
+                {{ $order->customer_id }} 
+                {{$customer->first_name}} {{$customer->last_name}}
+            </div>
+            <div>
+                <strong>customer_id and name:</strong>
+                {{ $order->customer_id }} 
+                {{$customer->first_name}} {{$customer->last_name}}
+            </div>
+            <div>
+                <strong>Delivery address:</strong>
+                @if ($customer->Address2 == null)
+                {{ $customer->Address1 }} {{$customer->house_number1}}
+                
+                @else 
+                {{$customer->Address2}}
+                @endif
             </div>
         </div>
         <div>
@@ -51,7 +66,7 @@
                 @foreach($products as $product)
                 <br>
                 <div class="flex">
-                <a href="{{route('adminproduct.show', $product->id)}}"><img class="p-0 h-full object-cover" src=" {{ url($product->attributes->image) }}" width='100px' height='100px'></a>
+                <a href="{{route('adminproduct.show', $product->id)}}"><img class="p-0 h-full object-cover" src=" {{ url($product->image) }}" width='100px' height='100px'></a>
                 Product: {{$product->name}}
                 <br>Price per piece: ${{$product->price}}
                 <br>Amount: {{$product->quantity}}
