@@ -67,7 +67,7 @@ Route::get('/admin/completed', [OrderController::class, 'index']);
 
 
 Route::get('/admin/statistics', [AdminController::class, 'showStatistics'])->name('admin.showStatistics');
-
+Route::get('/admin/work', [AdminController::class, 'work'])->name('admin.work');
 Route::resource('admin', AdminController::class);
 Route::resource('adminproduct', AdminProductController::class);
 Route::resource('admincategory', AdminCategoryController::class);

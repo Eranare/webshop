@@ -29,4 +29,10 @@ class AdminController extends Controller
         else 
             return view('auth.login');
     }
+    public function work(){
+        if(Auth::check()){
+            return view('admin.work.adminwork');
+        } else
+            return view('auth.login');
+    }
 }
