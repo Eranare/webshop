@@ -7,7 +7,7 @@
   display:none;
 } 
 </style>
-Back button somewhere here
+<a href="{{route('categories.index')}}">Back</a>
           <main class="my-8">
             <div class="container px-6 mx-auto">
                 <div class="flex justify-center my-6">
@@ -42,7 +42,7 @@ Back button somewhere here
                               </td>
                               <td>
                                 <a href="#">
-                                  <p class="mb-2 md:ml-4">{{ $item->name }}</p>
+                                  <p class="mb-2 md:ml-4">{{ $item->name }}{{ $item->attributes->stock }}</p>
                                   
                                 </a>
                               </td>
@@ -53,7 +53,7 @@ Back button somewhere here
                                     <form action="{{ route('cart.update') }}" method="POST">
                                       @csrf
                                       <input type="hidden" name="id" value="{{ $item->id}}" >
-                                    <input type="number" name="quantity" value="{{ $item->quantity }}" 
+                                    <input type="number" min="1" max= "{{ $item->attributes->stock }}" name="quantity" value="{{ $item->quantity }}" 
                                     class="w-12 text-center bg-gray-300" />
                                     <button type="submit" class="px-2 pb-2 ml-2 text-white bg-blue-500">update</button>
                                     </form>
