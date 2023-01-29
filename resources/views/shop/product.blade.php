@@ -25,11 +25,34 @@ Product page
                 <span class="h-15 w-15 square-full overflow-hidden bg-gray-100">
                 <img class="h-full object-cover" src="{{ url('storage/'.$product->photo) }}" width='300px' height='200px' >
                 </span>
+                
                 <div class="border">
+                @if (str_contains($product->ingredients, 'Hare'))
+                    Print this text only if ingredients contain hare
+                @else 
+                    
+                @endif
+                @if (str_contains($product->ingredients, 'Hare'))
+                    Print this text only if ingredients contain hare
+                @else
+
+                @endif
+                @if (str_contains($product->ingredients, 'Hare'))
+                    Print this text only if ingredients contain hare
+                @else
+
+                @endif
+                @if (str_contains($product->ingredients, 'Hare'))
+                    Print this text only if ingredients contain hare
+                @else
+                    
+                @endif
+                
                     <svg> 
                         peanuts, wheat, soy, milk
                     </svg>
                 </div>
+                
             </div>
             <div class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                 Product: {{$product->name}}<br>

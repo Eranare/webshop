@@ -48,7 +48,6 @@ class AdminProductController extends Controller
             'photo' => 'required',
             'description' => 'required',
             'ingredients' => 'required',
-            'allergens'=> 'required',
             'stock' => 'required',
             'price' => 'required',
             'category_id' => 'required',
@@ -56,6 +55,7 @@ class AdminProductController extends Controller
         $product = Product::create($request->except('_token'));
 
         $path = $request->file('photo')->store('photos/Products', 'public');
+
 
         $product->photo = $path;
 
@@ -109,7 +109,7 @@ class AdminProductController extends Controller
             'ingredients' => 'required',
             'stock' => 'required',
             'price' => 'required',
-            'allergens' => 'required',
+
             'category_id' => 'required',
         ]);
         

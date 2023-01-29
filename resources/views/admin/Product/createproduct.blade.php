@@ -32,13 +32,13 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Product-name:</strong>
-                <input type="text" name="name" class="form-control" placeholder="name">
+                <input type="text" name="name" class="form-control" placeholder="name"></input>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Photo:</strong>
-                <input type="file" name="photo" accept="image/png, image/gif, image/jpeg, image/jpg" class="form-control" placeholder="photo">
+                <input type="file" name="photo" accept="image/png, image/gif, image/jpeg, image/jpg" class="form-control" placeholder="photo"></input>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -55,25 +55,17 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Allergens:</strong>
-                <input type="checkbox" name="allergens" class="form-control">wheat</input>
-                <input type="checkbox" name="allergens" class="form-control"></input>
-                <input type="checkbox" name="allergens" class="form-control"></input>
-                <input type="checkbox" name="allergens" class="form-control"></input>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
                 <strong>Stock:</strong>
-                <input type="number" name="stock" class="form-control" placeholder="stock">
+                <input type="number" name="stock" class="form-control" placeholder="stock"></input>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Price:</strong>
-                <input type="number" name="price" class="form-control" placeholder="price">
+                <input type="number" name="price" class="form-control" placeholder="price"></input>
             </div>
         </div>
+       
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
             <strong>Category:</strong>
@@ -81,8 +73,11 @@
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                 @endforeach
+                </select>
             </div>
         </div>
+
+       
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="bg-yellow-200 px-3 py-2 rounded shadow-md">Submit</button>
         </div>

@@ -31,7 +31,7 @@ class AdminController extends Controller
     }
     public function work(){
         if(Auth::check()){
-            return view('admin.work.adminwork');
+            return view('admin.work.index');
         } else
             return view('auth.login');
     }
