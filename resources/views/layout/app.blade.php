@@ -28,8 +28,8 @@
         <div>
             <header class="container">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <svg> </svg>
-                    <h1 class ="text-3xl font-bold text-white">Shop</h1> Replace with logo
+                    <svg class="inline h-10 w-10"> </svg>
+                    <h1 class ="inline text-4xl font-bold text-white">The Candyshop</h1>
                 </div>
             </header>
 

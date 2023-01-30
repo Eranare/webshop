@@ -26,7 +26,6 @@
                 <th class="bg-blue-300 p-2 text-bold">id</th>
                 <th class="bg-blue-300 p-2 text-bold">Name</th>
                 <th class="bg-blue-300 p-2 text-bold">Stock</th>
-                <th class="bg-blue-300 p-2 text-bold">Pending</th>
                 <th class="bg-blue-300 p-2 text-bold">Price</th>
                 <th class="bg-blue-300 p-2 text-bold">Category</th>
                 <th class="bg-blue-300 p-2 text-bold">Created</th>
@@ -44,7 +43,6 @@
                 <td class="truncate p-2">{{ $product->id }}</td>
                 <td class="truncate p-2">{{ Str::limit($product->name, 15) }}</td>
                 <td class="truncate p-2">{{ $product->stock }}</td>
-                <td class="truncate p-2">0</td>
                 <td class="truncate p-2">${{ $product->price }}</td>
                 <td class="truncate p-2">@foreach($categories as $category)
                                             @if ($category->id === $product->category_id)
