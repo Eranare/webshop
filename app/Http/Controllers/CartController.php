@@ -54,7 +54,7 @@ class CartController extends Controller
     public function removeCart(Request $request)
     {
         \Cart::remove($request->id);
-        session()->flash('success', 'Item Cart Remove Successfully !');
+        session()->flash('success', 'Item Cart Remove Successfull !');
 
         return redirect()->route('cart.list');
     }
@@ -63,17 +63,25 @@ class CartController extends Controller
     {
         \Cart::clear();
 
-        session()->flash('success', 'All Item Cart Clear Successfully !');
+        session()->flash('success', 'All Item Cart Clear Successfull !');
 
         return redirect()->route('cart.list');
     }
-    public function checkOutCart(){
+    public function checkOutCart()
+    {
 
         $cartItems = \Cart::getContent();
-
-        return view('checkout.checkout', compact('cartItems'));
-
+        foreach ($cartItems as $item) {
+            $id = $item->id;
+            $prodstock = Product::findOrFail($id);
+            if ($item->quantity > $prodstock->stock) {
+                session()->flash('failure', 'Error ! Too many '.$item->name.', there should be no more than '.$prodstock->stock.' , you have '.$item->quantity. '!');
+                return redirect()->route('cart.list');
+            }
+            return view('checkout.checkout', compact('cartItems'));
+        }
     }
+
     public function payCart(Request $request){
 
         //$order = new Order();

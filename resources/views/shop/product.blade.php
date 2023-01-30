@@ -27,25 +27,43 @@ Product page
                 </span>
                 
                 <div class="border">
-                @if (str_contains($product->ingredients, 'Hare'))
-                    Print this text only if ingredients contain hare
-                @else 
-                    
-                @endif
-                @if (str_contains($product->ingredients, 'Hare'))
-                    Print this text only if ingredients contain hare
+                @if (str_contains(strtolower($product->ingredients), 'peanut'))
+                    <img src="{{ asset('images/peanut-amber_109463.png') }}" alt="peanut allergy">
+                @elseif  (str_contains(strtolower($product->ingredients), 'nut'))
+                    <img src="{{ asset('images/treenut-amber_109469.png') }}" alt="nut allergy">
                 @else
+                @endif
 
-                @endif
-                @if (str_contains($product->ingredients, 'Hare'))
-                    Print this text only if ingredients contain hare
+                @if (str_contains(strtolower($product->ingredients), 'wheat'))
+                    <img src="{{ asset('images/amber_109461.png') }}" alt="wheat allergy">
+                @elseif  (str_contains(strtolower($product->ingredients), 'gluten'))
+                    <img src="{{ asset('images/amber_109461.png') }}" alt="gluten allergy">
                 @else
+                @endif
 
-                @endif
-                @if (str_contains($product->ingredients, 'Hare'))
-                    Print this text only if ingredients contain hare
+                @if (str_contains(strtolower($product->ingredients), 'soy'))
+                    <img src="{{ asset('images/soya-amber_109468.png') }}" alt="soy(bean) allergy">
+                @elseif  (str_contains(strtolower($product->ingredients), 'bean'))
+                    <img src="{{ asset('images/soya-amber_109468.png') }}" alt="soy(bean) allergy">
                 @else
-                    
+                @endif
+
+                @if (str_contains(strtolower($product->ingredients), 'pudding'))
+                    <img src="{{ asset('images/PuddingIGuess.png') }}" alt="gelatin allergy">
+                @elseif  (str_contains(strtolower($product->ingredients), 'gelatin'))
+                    <img src="{{ asset('images/PuddingIGuess.png') }}" alt="gelatin allergy">                
+                @elseif  (str_contains(strtolower($product->ingredients), 'bone'))
+                    <img src="{{ asset('images/PuddingIGuess.png') }}" alt="gelatin allergy">                
+                @else            
+                @endif
+
+                @if (str_contains(strtolower($product->ingredients), 'lactose'))
+                    <img src="{{ asset('images/milk-amber_109466.png') }}" alt="lactose allergy">
+                @elseif  (str_contains(strtolower($product->ingredients), 'lactate'))
+                    <img src="{{ asset('images/milk-amber_109466.png') }}" alt="lactose allergy">                
+                @elseif  (str_contains(strtolower($product->ingredients), 'milk'))
+                    <img src="{{ asset('images/milk-amber_109466.png') }}" alt="lactose allergy">                
+                @else            
                 @endif
                 
                     <svg> 
