@@ -28,41 +28,41 @@ Product page
                 
                 <div class="border">
                 @if (str_contains(strtolower($product->ingredients), 'peanut'))
-                    <img src="{{ asset('images/peanut-amber_109463.png') }}" alt="peanut allergy">
+                    <img class="w-10 inline-block" src="{{ asset('images/peanut-amber_109463.png') }}" title="peanut allergy" alt="peanut allergy">
                 @elseif  (str_contains(strtolower($product->ingredients), 'nut'))
-                    <img src="{{ asset('images/treenut-amber_109469.png') }}" alt="nut allergy">
+                    <img class="w-10 inline-block" src="{{ asset('images/treenut-amber_109469.png') }}" title="nut allergy" alt="nut allergy">
                 @else
                 @endif
 
                 @if (str_contains(strtolower($product->ingredients), 'wheat'))
-                    <img src="{{ asset('images/amber_109461.png') }}" alt="wheat allergy">
+                    <img class="w-10 inline-block" src="{{ asset('images/amber_109461.png') }}" title="wheat allergy" alt="wheat allergy">
                 @elseif  (str_contains(strtolower($product->ingredients), 'gluten'))
-                    <img src="{{ asset('images/amber_109461.png') }}" alt="gluten allergy">
+                    <img class="w-10 inline-block" src="{{ asset('images/amber_109461.png') }}" title="gluten allergy" alt="gluten allergy">
                 @else
                 @endif
 
                 @if (str_contains(strtolower($product->ingredients), 'soy'))
-                    <img src="{{ asset('images/soya-amber_109468.png') }}" alt="soy(bean) allergy">
+                    <img class="w-10 inline-block" src="{{ asset('images/soya-amber_109468.png') }}" title="soy(bean) allergy" alt="soy(bean) allergy">
                 @elseif  (str_contains(strtolower($product->ingredients), 'bean'))
-                    <img src="{{ asset('images/soya-amber_109468.png') }}" alt="soy(bean) allergy">
+                    <img class="w-10 inline-block" src="{{ asset('images/soya-amber_109468.png') }}" title="soy(bean) allergy" alt="soy(bean) allergy">
                 @else
                 @endif
 
                 @if (str_contains(strtolower($product->ingredients), 'pudding'))
-                    <img src="{{ asset('images/PuddingIGuess.png') }}" alt="gelatin allergy">
+                    <img class="w-10 inline-block" src="{{ asset('images/Bone.png') }}" title="gelatin allergy" alt="gelatin allergy">
                 @elseif  (str_contains(strtolower($product->ingredients), 'gelatin'))
-                    <img src="{{ asset('images/PuddingIGuess.png') }}" alt="gelatin allergy">                
+                    <img class="w-10 inline-block" src="{{ asset('images/Bone.png') }}" title="gelatin allergy" alt="gelatin allergy">                
                 @elseif  (str_contains(strtolower($product->ingredients), 'bone'))
-                    <img src="{{ asset('images/PuddingIGuess.png') }}" alt="gelatin allergy">                
+                    <img class="w-10 inline-block" src="{{ asset('images/Bone.png') }}" title="gelatin allergy" alt="gelatin allergy">                
                 @else            
                 @endif
 
                 @if (str_contains(strtolower($product->ingredients), 'lactose'))
-                    <img src="{{ asset('images/milk-amber_109466.png') }}" alt="lactose allergy">
+                    <img class="w-10 inline-block" src="{{ asset('images/milk-amber_109466.png') }}" title="lactose allergy" alt="lactose allergy">
                 @elseif  (str_contains(strtolower($product->ingredients), 'lactate'))
-                    <img src="{{ asset('images/milk-amber_109466.png') }}" alt="lactose allergy">                
+                    <img class="w-10 inline-block" src="{{ asset('images/milk-amber_109466.png') }}" title="lactose allergy" alt="lactose allergy">                
                 @elseif  (str_contains(strtolower($product->ingredients), 'milk'))
-                    <img src="{{ asset('images/milk-amber_109466.png') }}" alt="lactose allergy">                
+                    <img class="w-10 inline-block" src="{{ asset('images/milk-amber_109466.png') }}" title="lactose allergy" alt="lactose allergy">                
                 @else            
                 @endif
                 
@@ -90,8 +90,9 @@ Product page
             </div>
             
         </div>
-        Description: {{$product->description}}
-        Ingredients: {{$product->ingredients}}
+        <strong>Description:</strong> {{$product->description}}
+        <br>
+        <strong>Ingredients:</strong> {{$product->ingredients}}
 
     </div>
 </div>
