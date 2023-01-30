@@ -31,7 +31,8 @@ class AdminProductController extends Controller
      */
     public function create()
     {
-        return view('admin.product.createproduct');
+        $categories = Category::all();
+        return view('admin.product.createproduct')->with('categories',$categories);
     }
 
     /**
@@ -54,6 +55,7 @@ class AdminProductController extends Controller
         $product = Product::create($request->except('_token'));
 
         $path = $request->file('photo')->store('photos/Products', 'public');
+
 
         $product->photo = $path;
 
@@ -107,6 +109,7 @@ class AdminProductController extends Controller
             'ingredients' => 'required',
             'stock' => 'required',
             'price' => 'required',
+
             'category_id' => 'required',
         ]);
         

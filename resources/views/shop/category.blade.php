@@ -28,6 +28,7 @@
                 <p class = "text-sm font-medium text-gray-900">Price ={{$product->price}} </p>
 
 
+
                 <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" value="{{ $product->id }}" name="id">
@@ -41,6 +42,7 @@
                 </form>
 
             </div>
+
             </div>
 
         </div>

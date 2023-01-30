@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Customer;
 use App\models\Order;
 use App\models\Product;
+use App\models\Order_Product;
 class CartController extends Controller
 {
     //
@@ -54,7 +55,7 @@ class CartController extends Controller
     public function removeCart(Request $request)
     {
         \Cart::remove($request->id);
-        session()->flash('success', 'Item Cart Remove Successfully !');
+        session()->flash('success', 'Item Cart Remove Successfull !');
 
         return redirect()->route('cart.list');
     }
@@ -63,23 +64,31 @@ class CartController extends Controller
     {
         \Cart::clear();
 
-        session()->flash('success', 'All Item Cart Clear Successfully !');
+        session()->flash('success', 'All Item Cart Clear Successfull !');
 
         return redirect()->route('cart.list');
     }
-    public function checkOutCart(){
+    public function checkOutCart()
+    {
 
         $cartItems = \Cart::getContent();
-
-        return view('checkout.checkout', compact('cartItems'));
-
+        foreach ($cartItems as $item) {
+            $id = $item->id;
+            $prodstock = Product::findOrFail($id);
+            if ($item->quantity > $prodstock->stock) {
+                session()->flash('failure', 'Error ! Too many '.$item->name.', there should be no more than '.$prodstock->stock.' , you have '.$item->quantity. '!');
+                return redirect()->route('cart.list');
+            }
+            return view('checkout.checkout', compact('cartItems'));
+        }
     }
+
     public function payCart(Request $request){
 
-        $order = new Order();
-  
+        //$order = new Order();
+        $orderProduct = new Order_Product();
         $cartItems = \Cart::getContent();
-        $order->cart = serialize($cartItems);
+        
 
         $customer = new Customer();
         
@@ -98,19 +107,28 @@ class CartController extends Controller
         $customer->city2 = $request->input('city2');
         $customer->save();
         
-        $customer->id;
+        $customer_id=$customer->id;
  
 
-        Order::create([
+        $order= Order::create([
             'customer_id'=>$customer->id,
-            'cart'=> $order->cart,
             'payment_id'=>'order'.rand(1000, 9999),
             'orderstatus'=> 1,
             'price'=> \Cart::getTotal(),
 
         ]);
+        
+        
        //Loop through cart items to deduct cart quantity from product stock
        foreach ($cartItems as $item){
+            Order_Product::create([
+                'order_id'=>$order->id,
+                'product_id' => $item->id,
+                'name' => $item->name,
+                'price' => $item->price,
+                'image' =>$item->attributes->image,
+                'quantity' => $item->quantity,
+            ]);
             $id = $item->id;
             $prodstock  =  Product::findOrFail($id);
             $prodstock->stock -= $item->quantity;

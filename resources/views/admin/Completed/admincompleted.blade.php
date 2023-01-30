@@ -5,7 +5,7 @@
 <div class="row w-10/12">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h1 class="text-xl">Pending orders page</h1>
+                <h1 class="text-xl">Completed orders page</h1>
             </div>
         </div>
 </div>
@@ -27,7 +27,7 @@
         <tbody>
             <!-- USE BLADE TO ITERATE OVER THE DATA YOU PASSED IN YOUR CONTROLLER -->
             <!-- IAM NOT SHOWING ALL THE DATA TO KEEP THE TABLE COMPACT. -->
-            @foreach($pendingorders as $order)
+            @foreach($completedorders as $order)
             <tr class="text-md p-2 w-3 border border-solid border-blue-600 border-1">
                 <td class="truncate p-2">{{ $order->id }}</td>
                 <td class="truncate p-2">{{ $order->customer_id }}</td>
@@ -37,7 +37,7 @@
                 <td class="truncate p-2">{{ $order->updated_at }}</td>
                 <!-- USING THE DETAILS BUTTON WE WILL AN OVERVIEW OF ALL THE DATA. -->
                 <td class="truncate p-2">
-                    <a class="bg-blue-200 px-3 py-2 rounded shadow-md" href="{{ route('adminpending.show',$order->id) }}"> details </a>
+                    <a class="bg-blue-200 px-3 py-2 rounded shadow-md" href="{{ route('admincompleted.show',$order->id) }}"> details </a>
                 </td>
             </tr>
             @endforeach
