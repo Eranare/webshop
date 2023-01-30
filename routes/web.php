@@ -11,6 +11,11 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderPendingController;
+use App\Http\Controllers\OrderCompletedController;
+use App\Http\Controllers\OrderCancelledController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -63,7 +68,7 @@ Route::get('/admin/category', [AdminCategoryController::class, 'index']);
 
 Route::get('/admin/pending', [OrderController::class, 'index']);
 // Route::get('/admin/statistics', [stats::class, 'index']);
-Route::get('/admin/completed', [OrderController::class, 'index']);
+Route::get('/admincompleted', [OrderCompletedController::class, 'index']);
 
 
 Route::get('/admin/statistics', [AdminController::class, 'showStatistics'])->name('admin.showStatistics');
@@ -73,10 +78,10 @@ Route::resource('adminproduct', AdminProductController::class);
 Route::resource('admincategory', AdminCategoryController::class);
 Route::resource('adminpending', OrderController::class);
 // Route::resource('adminstatistics', stats::class);
-Route::resource('admincompleted', OrderController::class);
+Route::resource('admincompleted', OrderCompletedController::class);
 
-Route::post('/adminpending',[OrderController::class, 'setCompleted' ])->name('order.complete');
-Route::get('/admin/order',[OrderController::class, 'setCancelled'])->name('order.cancel');
+Route::post('/adminpending/{id}',[OrderPendingController::class, 'setCompleted' ])->name('order.complete');
+Route::post('/adminpending/{id}/cancelled',[OrderController::class, 'setCancelled'])->name('order.cancel');
 
 Auth::routes();
 
