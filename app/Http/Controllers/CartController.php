@@ -76,11 +76,11 @@ class CartController extends Controller
             $id = $item->id;
             $prodstock = Product::findOrFail($id);
             if ($item->quantity > $prodstock->stock) {
-                session()->flash('succes', 'Error ! Too many '.$item->name.', there should be no more than '.$prodstock->stock.' , you have '.$item->quantity. '!');
+                session()->flash('success', 'Error ! Too many '.$item->name.', there should be no more than '.$prodstock->stock.' , you have '.$item->quantity. '!');
                 return redirect()->route('cart.list');
             }
-            return view('checkout.checkout', compact('cartItems'));
         }
+        return view('checkout.checkout', compact('cartItems'));
     }
 
     public function payCart(Request $request){

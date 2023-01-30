@@ -42,7 +42,7 @@
                               </td>
                               <td>
                                 <a href="#">
-                                  <p class="mb-2 md:ml-4">{{ $item->name }}{{ $item->attributes->stock }}</p>
+                                  <p class="mb-2 md:ml-4">{{ $item->name }}</p>
                                   
                                 </a>
                               </td>
