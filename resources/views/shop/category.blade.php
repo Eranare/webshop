@@ -26,20 +26,23 @@
                 <div class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                 Product: {{$product->name}}<br>
                 <p class = "text-sm font-medium text-gray-900">Price ={{$product->price}} </p>
-                
-                
-                <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <input type="hidden" value="{{ $product->id }}" name="id">
-                            <input type="hidden" value="{{ $product->name }}" name="name">
-                            <input type="hidden" value="{{ $product->price }}" name="price">
-                            <input type="hidden" value="{{ url('storage/'.$product->photo) }}"  name="image"> <!-- dit werkte niet qua link, nu wel-->
-                            <input type="number" value="1" min="1" name="quantity">
-                            <button class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm
-                            hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">voeg toe</button>
-                        </form>
 
-                </div>
+
+
+                <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" value="{{ $product->id }}" name="id">
+                        <input type="hidden" value="{{ $product->name }}" name="name">
+                        <input type="hidden" value="{{ $product->price }}" name="price">
+                        <input type="hidden" value="{{ $product->stock }}" name="stock">
+                        <input type="hidden" value="{{ url('storage/'.$product->photo) }}"  name="image"> <!-- dit werkte niet qua link, nu wel-->
+                        <input type="number" value="1" min="1" max= "{{ $product->stock }}" name="quantity">
+                        <button class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm
+                hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">Add to cart</button>
+                </form>
+
+            </div>
+
             </div>
 
         </div>
