@@ -27,25 +27,43 @@ Product page
                 </span>
                 
                 <div class="border">
-                @if (str_contains($product->ingredients, 'Hare'))
-                    Print this text only if ingredients contain hare
-                @else 
-                    
-                @endif
-                @if (str_contains($product->ingredients, 'Hare'))
-                    Print this text only if ingredients contain hare
+                @if (str_contains(strtolower($product->ingredients), 'peanut'))
+                    <img class="w-10 inline-block" src="{{ asset('images/peanut-amber_109463.png') }}" title="peanut allergy" alt="peanut allergy">
+                @elseif  (str_contains(strtolower($product->ingredients), 'nut'))
+                    <img class="w-10 inline-block" src="{{ asset('images/treenut-amber_109469.png') }}" title="nut allergy" alt="nut allergy">
                 @else
+                @endif
 
-                @endif
-                @if (str_contains($product->ingredients, 'Hare'))
-                    Print this text only if ingredients contain hare
+                @if (str_contains(strtolower($product->ingredients), 'wheat'))
+                    <img class="w-10 inline-block" src="{{ asset('images/amber_109461.png') }}" title="wheat allergy" alt="wheat allergy">
+                @elseif  (str_contains(strtolower($product->ingredients), 'gluten'))
+                    <img class="w-10 inline-block" src="{{ asset('images/amber_109461.png') }}" title="gluten allergy" alt="gluten allergy">
                 @else
+                @endif
 
-                @endif
-                @if (str_contains($product->ingredients, 'Hare'))
-                    Print this text only if ingredients contain hare
+                @if (str_contains(strtolower($product->ingredients), 'soy'))
+                    <img class="w-10 inline-block" src="{{ asset('images/soya-amber_109468.png') }}" title="soy(bean) allergy" alt="soy(bean) allergy">
+                @elseif  (str_contains(strtolower($product->ingredients), 'bean'))
+                    <img class="w-10 inline-block" src="{{ asset('images/soya-amber_109468.png') }}" title="soy(bean) allergy" alt="soy(bean) allergy">
                 @else
-                    
+                @endif
+
+                @if (str_contains(strtolower($product->ingredients), 'pudding'))
+                    <img class="w-10 inline-block" src="{{ asset('images/Bone.png') }}" title="gelatin allergy" alt="gelatin allergy">
+                @elseif  (str_contains(strtolower($product->ingredients), 'gelatin'))
+                    <img class="w-10 inline-block" src="{{ asset('images/Bone.png') }}" title="gelatin allergy" alt="gelatin allergy">                
+                @elseif  (str_contains(strtolower($product->ingredients), 'bone'))
+                    <img class="w-10 inline-block" src="{{ asset('images/Bone.png') }}" title="gelatin allergy" alt="gelatin allergy">                
+                @else            
+                @endif
+
+                @if (str_contains(strtolower($product->ingredients), 'lactose'))
+                    <img class="w-10 inline-block" src="{{ asset('images/milk-amber_109466.png') }}" title="lactose allergy" alt="lactose allergy">
+                @elseif  (str_contains(strtolower($product->ingredients), 'lactate'))
+                    <img class="w-10 inline-block" src="{{ asset('images/milk-amber_109466.png') }}" title="lactose allergy" alt="lactose allergy">                
+                @elseif  (str_contains(strtolower($product->ingredients), 'milk'))
+                    <img class="w-10 inline-block" src="{{ asset('images/milk-amber_109466.png') }}" title="lactose allergy" alt="lactose allergy">                
+                @else            
                 @endif
                 
                     <svg> 
@@ -72,8 +90,9 @@ Product page
             </div>
             
         </div>
-        Description: {{$product->description}}
-        Ingredients: {{$product->ingredients}}
+        <strong>Description:</strong> {{$product->description}}
+        <br>
+        <strong>Ingredients:</strong> {{$product->ingredients}}
 
     </div>
 </div>
