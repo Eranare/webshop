@@ -79,8 +79,8 @@ class CartController extends Controller
                 session()->flash('success', 'Error ! Too many '.$item->name.', there should be no more than '.$prodstock->stock.' , you have '.$item->quantity. '!');
                 return redirect()->route('cart.list');
             }
-            return view('checkout.checkout', compact('cartItems'));
         }
+        return view('checkout.checkout', compact('cartItems'));
     }
 
     public function payCart(Request $request){
