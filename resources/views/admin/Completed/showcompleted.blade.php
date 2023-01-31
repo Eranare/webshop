@@ -2,11 +2,19 @@
 
 @section('content')
 
+@php $orderStatus = '';
+if($order->orderstatus == 1)
+        $orderStatus = 'Pending';
+elseif($order->orderstatus == 2)
+        $orderStatus = 'Completed'; 
+elseif($order->orderstatus == 3)
+        $orderStatus = 'Cancelled';
 
+@endphp
 <div>
         <div>
             <div class="pull-left">
-                <h1 class="text-xl"> Show Completed order</h1>
+                <h1 class="text-xl"> Show {{$orderStatus}} order</h1>
             </div>
             <div class="text-center">
                 <a class="bg-blue-200 px-3 py-2 m-8 rounded shadow-md" href="{{ route('admincompleted.index') }}"> Back</a>

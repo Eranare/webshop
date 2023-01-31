@@ -17,7 +17,7 @@ class OrderCancelledController extends Controller
 
             $cancelledorders = Order::all()->where('orderstatus', '=', 3);
            
-            return view('admin.pending.admincancelledd')->with('cancelledorders',$cancelledorders); 
+            return view('admin.cancelled.admincancelled')->with('cancelledorders',$cancelledorders); 
         } else
             return view('auth.login');
     }
@@ -35,6 +35,21 @@ class OrderCancelledController extends Controller
             
         
         } 
+        else return view('auth.login');
+    }
+    public function show($id)
+    {
+        if (Auth::check()) {
+            
+            
+            $order = Order::findOrFail($id);
+            $customer_id = $order->customer_id;            
+            $products = Order_Product::get()->where('order_id', $id);
+
+            $customer = Customer::findOrFail($customer_id);
+            
+            return view('admin.cancelled.showcancelled', compact('order', 'products', 'customer'));
+        }
         else return view('auth.login');
     }
 }

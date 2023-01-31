@@ -79,7 +79,7 @@ Route::resource('admincategory', AdminCategoryController::class);
 Route::resource('adminpending', OrderController::class);
 // Route::resource('adminstatistics', stats::class);
 Route::resource('admincompleted', OrderCompletedController::class);
-
+Route::resource('admincancelled', OrderCancelledController::class);
 Route::post('/adminpending/{id}',[OrderController::class, 'setCompleted' ])->name('order.complete');
 Route::post('/adminpending/{id}/cancelled',[OrderController::class, 'setCancelled'])->name('order.cancel');
 

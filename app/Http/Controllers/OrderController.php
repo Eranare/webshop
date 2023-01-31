@@ -68,8 +68,13 @@ class OrderController extends Controller
     {
         if (Auth::check()) {
             $order=Order::findOrFail($id);
-            $order->orderstatus = 2;
-            $order->save();
+            if ($order->orderstatus != 3) {
+                $order->orderstatus = 2;
+                $order->save();
+            }
+            else{
+                session()->flash('succes'."Cant set cancelled to completed");
+            }
             //$pendingorders = Order::all()->where('orderstatus', '=', 1);
 
             return redirect()->route('adminpending.index');
