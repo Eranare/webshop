@@ -62,7 +62,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Price:</strong>
-                <input type="number" name="price" class="form-control" placeholder="price"></input>
+                <input type="number" step="0.01" name="price" class="form-control" placeholder="price"></input>
             </div>
         </div>
        

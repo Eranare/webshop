@@ -26,7 +26,7 @@ Product page
                 <img class="h-full object-cover" src="{{ url('storage/'.$product->photo) }}" width='300px' height='200px' >
                 </span>
                 
-                <div class="border">
+                <div class="flex justify-center items-center h-10 bg-slate-50 place-items-center border">
                 @if (str_contains(strtolower($product->ingredients), 'peanut'))
                     <img class="w-10 inline-block" src="{{ asset('images/peanut-amber_109463.png') }}" title="peanut allergy" alt="peanut allergy">
                 @elseif  (str_contains(strtolower($product->ingredients), 'nut'))
@@ -72,9 +72,9 @@ Product page
                 </div>
                 
             </div>
-            <div class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                Product: {{$product->name}}<br>
-                Price ={{$product->price}} <br>
+            <div class="relative whitespace-nowrap py-4 pl-5 pr-4 text-right sm:pr-6">
+                <p class="text-2xl"><strong> Product: {{$product->name}} </strong></p><br>
+                <p class="text-xl"><strong> Price ={{$product->price}} </strong></p><br>
 
                 <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
