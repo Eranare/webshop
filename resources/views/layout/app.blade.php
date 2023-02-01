@@ -29,25 +29,15 @@
     <div class="min-h-full">
         <div>
             <header class="container">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <svg class="inline h-10 w-10"> </svg>
-                    <h1 class ="inline text-4xl font-bold text-white">The Candyshop</h1>
+                <div class="flex justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                    <svg class="inline block h-10 w-10"> </svg>
+                    <h1 class ="inline block text-4xl font-bold text-white">The Candyshop</h1>
                 </div>
             </header>
-
-
-    
-
         </div>
+        
         <main>
-            
-            
-            
-            
-
-
-
-            <div class ="#">
+            <div>
             @yield ('body','Default Content')
             </div>
         </main>

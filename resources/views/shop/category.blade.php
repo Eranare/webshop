@@ -2,15 +2,33 @@
 @section('title', $category->name)
 @section('body')
 
-<nav class="container  border ">
+<nav class="container border">
     <a href="{{route('categories.index')}}">Home</a> ->
     <a href="#">{{$category->name}}</a>
 </nav>
 
+<div class="relative">
+<div class="relative group">
+<div class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-400 via-gray-200 absolute top-0 left-0 h-full w-full"></div>
 
-    Current category image
-<div class= "rounded">
-    <img class="rounded-xl h-15 w-15  " width='300px' height='200px'src ="{{ url('storage/'.$category->photo) }}"> <!--Current Category image-->
+<div class="rounded flex justify-center">
+    <img class="rounded-xl" style='object-fit: cover; width:699px; height:200px;'src ="{{ url('storage/'.$category->photo) }}"> <!--Current Category image-->
+</div>
+
+<div class="flex justify-center absolute inset-0 p-8 h-5/5 w-full opacity-0 opacity-100">
+    <div class="flex justify-center bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-2/5 mt-2 text-white">
+        <p class="py-6 text-5xl" style="text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;">
+        <strong>{{$category->name}}</strong></p>
+    </div>
+</div>
+
+</div>
+</div>
+
+<div class ="flex justify-center">
+    <div class="w-3/5">
+    <strong>Description:</strong> {{$category->description}}
+    </div>
 </div>
 <div class="container h-15 w-15 square-full overflow-hidden bg-black bg-opacity-25 sticky">
     <ul>
