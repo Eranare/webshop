@@ -9,6 +9,8 @@
 </head>
 
 <body class="#">
+<video id='video'autoplay="true" muted="true" loop="true" class=' fixed  pointer-events-none -z-20 w-full'  src = "{{asset('background.mp4')}}"></video>
+
 <button class="buttonbasket group  h-05 w-32 overflow-hidden rounded-lg bg-white text-xl shadow float-right sticky top-60 z-50" > 
                 <div class="absolute inset-0 w-3 bg-amber-400 transition-all duration-[250ms] ease-out group-hover:w-full"> </div>
                     <span class="relative text-black group-hover:text-white">                <a href="{{ route('cart.list') }}" class="flex items-center">
@@ -22,7 +24,7 @@
                     </span>
                
             </button>
-
+            
 <div class="h-full container mx-auto px-2 bg-cyan-50 bg-opacity-25 sticky" >
     <div class="min-h-full">
         <div>
