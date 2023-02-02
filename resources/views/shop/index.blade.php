@@ -71,7 +71,7 @@
         <div class="mx-0 px-0 mt-1 sm:mt-0 sm:col-span-2">
 
         <div class="relative">
-<div class="relative group">
+            <div class="relative group">
             <div class ="flex items-center"> 
                 <span class="square-full overflow-hidden rounded-xl">
 
@@ -119,6 +119,7 @@
     @foreach ($categories as $category)
     @foreach ($category->products as $product)
 
+
                     <div class="relative">
                         <div class="relative group pb-1">
                         <div class="flex justify-center items-center rounded-xl opacity-0 bg-gradient-to-t from-gray-900 via-gray-600 to-opacity-10 group-hover:opacity-30 absolute top-0 left-0 h-full w-full"></div>
@@ -145,6 +146,8 @@
                         </div>
 
                     </div>
+               
+    
     @endforeach
     @endforeach
 </div>
