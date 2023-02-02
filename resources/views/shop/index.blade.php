@@ -6,47 +6,10 @@
 @section('body')
 
 
-<div class="text-right">
-<h2><a href ="{{route('admin.index' )}}">tempt admin link </a></h2>
-</div>
+    <!-- Discounts here Discounts here Discounts here Discounts here-->
 
-<div class="flex justify-center">
-    <img class="h-20" src="{{ asset('images/divider.png') }}" alt="colorful divider">                
-</div>
-
-<div class="container border">       
-    <ul class="grid grid-cols-6 gap-1">
-    @foreach ($categories as $category)
-    <li>
-        
-    <div> 
-        <div class="mx-0 px-0 mt-1 sm:mt-0 sm:col-span-2">
-            <div class ="flex items-center"> 
-                <span class="square-full overflow-hidden">
-                    <a href="{{route('categories.show', $category->id)}}"><img class="max-w-xs hover:scale-110 transition duration-300 ease-in-out rounded-xl object-cover" src="{{ url('storage/'.$category->photo) }}" width='300px' height='200px' ></a>
-                </span>
-            </div>
-        </div>
-    </div>
-    </li>
-    @endforeach
-    </ul>
-</div>
-
-
-
-    <!-- check if a discount is active in the first place -->
-
-
-
-<div class="container border ">    
-    <br>
-    On sale
-
-<div class="container border">    
-    <br>
-
-    <ul class="grid grid-cols-6 gap-4"> 
+    <div class="container">    
+    <ul class="grid grid-cols-5 gap-4"> 
         @foreach($categories as $category)        
     @foreach ($category->products as $product)
     @if($product->discount_id >0)
@@ -57,7 +20,7 @@
             <span class="">
                 <a href="{{route('products.show', $product->id)}}"><img class="h-full object-cover" src="{{ url('storage/'.$product->photo) }}" width='300px' height='200px' ></a>
             
-            <div class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+            <div class="relative whitespace-nowrap py-4 px-5 text-right text-sm font-medium sm:pr-6">
                 Product: {{$product->name}}<br>
                 <!--Look at discount id to pick up the discount % -->
                 <span>
@@ -98,13 +61,34 @@
     </ul>
 </div>
 
+<!-- Categories here Categories here Categories here Categories here-->
 
+<div class="container border bg-amber-100 border-amber-100 border-8 rounded-xl">       
+    <ul class="grid grid-cols-6 gap-1">
+    @foreach ($categories as $category)
+    <li>
+        
+    <div> 
+        <div class="mx-0 px-0 mt-1 sm:mt-0 sm:col-span-2">
+            <div class ="flex items-center"> 
+                <span class="square-full overflow-hidden rounded-xl">
+                    <a href="{{route('categories.show', $category->id)}}"><img class="max-w-xs hover:scale-110 transition duration-300 ease-in-out object-cover" src="{{ url('storage/'.$category->photo) }}" width='300px' height='200px' ></a>
+                </span>
+            </div>
+        </div>
+    </div>
+    </li>
+    @endforeach
+    </ul>
+</div>
 
 
 
 <div class="flex justify-center">
-    <img class="h-20" src="{{ asset('images/divider.png') }}" alt="colorful divider">                
+    <img class="h-20 rotate-180" src="{{ asset('images/divider.png') }}" alt="colorful divider">                
 </div>
+
+<!-- Products here Products here Products here Products here-->
 
 
 <div class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-y-12 lg:gap-x-8 sm:gap-y-10 sm:gap-x-6 gap-y-6 lg:mt-12 mt-10">
