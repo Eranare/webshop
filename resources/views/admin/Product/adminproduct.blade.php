@@ -27,6 +27,7 @@
                 <th class="bg-blue-300 p-2 text-bold">Name</th>
                 <th class="bg-blue-300 p-2 text-bold">Stock</th>
                 <th class="bg-blue-300 p-2 text-bold">Price</th>
+                <th class="bg-blue-300 p-2 text-bold">Discount</th>
                 <th class="bg-blue-300 p-2 text-bold">Category</th>
                 <th class="bg-blue-300 p-2 text-bold">Created</th>
                 <th class="bg-blue-300 p-2 text-bold">Updated</th>
@@ -44,6 +45,16 @@
                 <td class="truncate p-2">{{ Str::limit($product->name, 15) }}</td>
                 <td class="truncate p-2">{{ $product->stock }}</td>
                 <td class="truncate p-2">${{ $product->price }}</td>
+
+                <td class="truncate p-2">@if  ($product->discount_id <= 0) 
+                None
+                @else      
+                @foreach($discounts as $discount)
+                @if($discount->id == $product->discount_id)
+                {{$discount->discount}}% <!-- Displlay discount number according to discount id-->
+                @endif
+                @endforeach
+            @endif</td>
                 <td class="truncate p-2">@foreach($categories as $category)
                                             @if ($category->id === $product->category_id)
                                                 {{ $category->name }}

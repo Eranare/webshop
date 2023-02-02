@@ -30,27 +30,48 @@
     </ul>
 </div>
 
+
+    <!-- check if a discount is active in the first place -->
+
+
+
 <div class="container border ">    
     <br>
-    <!-- features -->
-    ---------------------------------
+    On sale
     <ul class="grid grid-cols-6 gap-4"> 
+        @foreach($categories as $category)        
     @foreach ($category->products as $product)
+    @if($product->discount_id >0)
+
     <li>
     <div class="">
         <div class ="border"> 
             <span class="">
                 <a href="{{route('products.show', $product->id)}}"><img class="h-full object-cover" src="{{ url('storage/'.$product->photo) }}" width='300px' height='200px' ></a>
-            </span>
+            
             <div class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                 Product: {{$product->name}}<br>
-                Price ={{$product->price}} <br>
+                <!--Look at discount id to pick up the discount % -->
+                <span>
+                Price = <s>{{$product->price}} </s> 
+                @foreach($discounts as $discount)
+                <?php
+                (double)$disprice = 0.00;
+                (double)$price = $product->price;
+                $discount->id = $product->discount_id;
+                (double)$percent=$discount->discount;
+                
+                $disprice +=$price - round(($price /100) * $percent,2); ?>
+                @endforeach 
+                <strong><?php echo $disprice; ?></strong>
+
+                <br>
 
                 <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" value="{{ $product->id }}" name="id">
                             <input type="hidden" value="{{ $product->name }}" name="name">
-                            <input type="hidden" value="{{ $product->price }}" name="price">
+                            <input type="hidden" value="{{ $disprice }}" name="price">
                             <input type="hidden" value="{{ $product->stock }}" name="stock">
                             <input type="hidden" value="{{ url('storage/'.$product->photo) }}"  name="image"> <!-- dit werkte niet qua link, nu wel-->
                             <input type="number" value="1" min="1" max= "{{ $product->stock }}" name="quantity">
@@ -63,10 +84,13 @@
         
     </div>
     </li>
+    @endif  
+    @endforeach
     @endforeach
     </ul>
 
 </div>
+
 
 <h1>Show alles </h1>
 <br>

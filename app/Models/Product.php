@@ -17,7 +17,10 @@ class Product extends Model
 {
     return $this->belongsTo('App\Models\Category', 'id');
 }
-    protected $fillable = ['name', 'photo', 'description', 'ingredients', 'stock', 'price', 'category_id'];
+    public function Discount(){
+        return $this->belongsTo('App\Models\Discount', 'id');
+    }
+    protected $fillable = ['name', 'photo', 'description', 'ingredients', 'vegan', 'stock', 'price', 'discount_id', 'category_id'];
 
 
 }

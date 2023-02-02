@@ -14,7 +14,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderPendingController;
 use App\Http\Controllers\OrderCompletedController;
 use App\Http\Controllers\OrderCancelledController;
-
+use App\Http\Controllers\DiscountController;
 
 
 /*
@@ -65,7 +65,7 @@ Route::get('postCheckout', [CartController::class, 'postCheckout'])->name('cart.
 Route::get('/Adminpanel', [AdminController::class, 'index']);
 Route::get('/admin/product', [AdminProductController::class, 'index']);
 Route::get('/admin/category', [AdminCategoryController::class, 'index']);
-
+Route::get('/admin/discounts', [DiscountController::class, 'index']);
 Route::get('/admin/pending', [OrderController::class, 'index']);
 // Route::get('/admin/statistics', [stats::class, 'index']);
 Route::get('/admincompleted', [OrderCompletedController::class, 'index']);
@@ -77,6 +77,7 @@ Route::resource('admin', AdminController::class);
 Route::resource('adminproduct', AdminProductController::class);
 Route::resource('admincategory', AdminCategoryController::class);
 Route::resource('adminpending', OrderController::class);
+Route::resource('discount',DiscountController::class);
 // Route::resource('adminstatistics', stats::class);
 Route::resource('admincompleted', OrderCompletedController::class);
 Route::resource('admincancelled', OrderCancelledController::class);
