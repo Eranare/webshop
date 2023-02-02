@@ -22,7 +22,7 @@
             Product: {{$product->name}}</p>
                 <!--Look at discount id to pick up the discount % -->
                 <span>
-                <p class="inline font-normal dark:text-gray-600 text-base leading-4 text-gray-600 mt-4">Price = <s>${{$product->price}}</s></p> 
+                <p class="inline font-normal dark:text-gray-600 text-base leading-4 text-gray-600 mt-4">Price = <s>${{number_format((double)$product->price, 2, '.', '')}}</s></p> 
                 @foreach($discounts as $discount)
                 <?php
 
@@ -34,7 +34,7 @@
                 
                 $disprice +=$price - round(($price /100) * $percent,2);} ?>
                 @endforeach 
-                <strong><p class="inline font-semibold dark:text-gray-600 text-xl leading-5 text-gray-600 mt-4"><?php echo '$'.$disprice; ?></p></strong>
+                <strong><p class="inline font-semibold dark:text-gray-600 text-xl leading-5 text-gray-600 mt-4"><?php echo '$'.number_format((double)$disprice, 2, '.', ''); ?></p></strong>
                 <div class="relative whitespace-nowrap py-2 px-5 text-left text-sm font-medium sm:pr-6">
 
                 <div class="absolute bottom-0 p-8 pr-16 w-full opacity-0 group-hover:opacity-100">
@@ -140,7 +140,7 @@
                                     <a href="{{route('products.show', $product->id)}}"><button class="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">View item</button></a>                           
                                 </div>
                                 <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-1 mt-1" style="text-shadow:-1px -1px 0 #7598d1,1px -1px 0 #7598d1,-1px 1px 0 #7598d1,1px 1px 0 #7598d1;">Product: {{$product->name}}</p>
-                        <p class="font-semibold dark:text-gray-600 text-xl leading-5 text-gray-600 mt-4">Price =${{$product->price}} </p>
+                        <p class="font-semibold dark:text-gray-600 text-xl leading-5 text-gray-600 mt-4">Price =${{number_format((double)$product->price, 2, '.', '')}} </p>
                         <p class="font-normal dark:text-gray-600 text-base leading-4 text-gray-600 mt-4"></p>
                         </div>
 

@@ -80,7 +80,7 @@
                     Product: {{$product->name}}
                 </p>
                 <p class="font-semibold dark:text-gray-600 text-xl leading-5 text-gray-600 mt-2 mb-2">
-                    Price ={{$product->price}}
+                    Price =${{number_format((double)$product->price, 2, '.', '')}}
                 </p>
 
                 <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
