@@ -1,10 +1,11 @@
 @extends('layout.app')
 @section('title', $category->name)
 @section('body')
-
-<nav class="container border">
-    <a href="{{route('categories.index')}}">Home</a> ->
-    <a href="#">{{$category->name}}</a>
+<nav class="container">
+    <a href="{{route('categories.index')}}" class="py-1 text-base" style="text-shadow:-1px -1px 0 #FFFFFF,1px -1px 0 #FFFFFF,-1px 1px 0 #FFFFFF,1px 1px 0 #FFFFFF;">
+Home</a> ->
+    <a href="#" class="py-1 text-base" style="text-shadow:-1px -1px 0 #FFFFFF,1px -1px 0 #FFFFFF,-1px 1px 0 #FFFFFF,1px 1px 0 #FFFFFF;">
+{{$category->name}}</a>
 </nav>
 
 <div class="relative">
@@ -26,7 +27,7 @@
 </div>
 
 <div class ="flex justify-center">
-    <div class="w-3/5">
+    <div class="text-justify w-3/5">
     <strong>Description:</strong> {{$category->description}}
     </div>
 </div>

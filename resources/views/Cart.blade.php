@@ -10,9 +10,7 @@
           <main class="my-8">
             <div class="container px-6 mx-auto">
                 <div class="flex justify-center my-6">
-                <div class="mx-auto flex min-h-screen max-w-screen-sm items-center justify-center">
-  <div class="h-full w-full rounded-md bg-gradient-to-b from-pink-500 via-red-500 to-yellow-500 p-4">
-    <div class="flex h-full w-full items-center justify-center bg-slate-100 back">
+                  <div class="flex flex-col w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y md:w-4/5 lg:w-4/5 mb-16 border border-8 border-fuchsia-100 rounded-3xl">
                       <form action="{{route('categories.index')}}">
                         <button class="px-6 py-2 my-4 text-green-800 bg-blue-300 rounded-lg">Return to Shop</button>
                       </form>
@@ -33,6 +31,7 @@
                                 <span class="hidden lg:inline">Quantity</span>
                               </th>
                               <th class="hidden text-right md:table-cell"> price</th>
+                              <th class="hidden text-right md:table-cell"> subtotal</th>
                               <th class="hidden text-right md:table-cell"> Remove </th>
                             </tr>
                           </thead>
@@ -70,6 +69,11 @@
                                 </span>
                               </td>
                               <td class="hidden text-right md:table-cell">
+                                <span class="text-sm font-medium lg:text-base">
+                                    ${{ $item->price * $item->quantity }}
+                                </span>
+                              </td>
+                              <td class="hidden text-right md:table-cell">
                                 <form action="{{ route('cart.remove') }}" method="POST">
                                   @csrf
                                   <input type="hidden" value="{{ $item->id }}" name="id">
@@ -82,10 +86,11 @@
                              
                           </tbody>
                         </table>
+                      <div class="flex justify-end">
                         <div>
                          <strong>Total: ${{ Cart::getTotal() }}</strong>
                         </div>
-                        <div>
+                        <div class="mt-6">
                           <form action="{{ route('cart.clear') }}" method="POST">
                             @csrf
                             <button class="px-6 py-2 my-4 text-red-800 bg-red-300 rounded-lg">Remove All Cart</button>
@@ -102,8 +107,7 @@
                         </div>
                       </div>
                       </div>
-</div>
-                    </div>
+                      </div>
                   </div>
             </div>
         </main>

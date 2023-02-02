@@ -53,6 +53,20 @@
         </div>
         <div>
             <div>
+                <strong>Discount:</strong>
+                @if  ($product->discount_id <= 0) 
+                    None
+                @else      
+                    @foreach($discounts as $discount)
+                        @if($discount->id == $product->discount_id)
+                            {{$discount->discount}}% <!-- Display discount number according to discount id-->
+                        @endif
+                    @endforeach
+                @endif
+            </div>
+        </div>
+        <div>
+            <div>
                 <strong>Category:</strong>
                 {{$category->name}}
             </div>

@@ -20,7 +20,7 @@ class AdminProductController extends Controller
        if (Auth::check()) {
         $products = Product::all();
         $categories = Category::all();
-            $discounts = Discount::all();
+        $discounts = Discount::all();
         return view('admin.product.adminproduct')->with('products',$products)->with('categories', $categories)->with('discounts',$discounts); 
        }
        else return view('auth.login');
@@ -79,8 +79,10 @@ class AdminProductController extends Controller
         $product = Product::findOrFail($id);
         $catid = $product->category_id;
         $category = Category::findOrFail($catid);
+        $discounts = Discount::all();
 
-        return view('admin.product.showproduct')->with('product',$product)->with('category', $category); 
+
+        return view('admin.product.showproduct')->with('product',$product)->with('category', $category)->with('discounts',$discounts); 
     }
 
     /**
