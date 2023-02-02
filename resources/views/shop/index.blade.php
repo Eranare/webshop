@@ -168,7 +168,7 @@
                                     @csrf
                                     <input type="hidden" value="{{ $product->id }}" name="id">
                                     <input type="hidden" value="{{ $product->name }}" name="name">
-                                    <input type="hidden" value="{{ $product->price }}" name="price">
+                                    <input type="hidden" value="{{ $disprice }}" name="price">
                                     <input type="hidden" value="{{ $product->stock }}" name="stock">
                                     <input type="hidden" value="{{ url('storage/'.$product->photo) }}"  name="image"> <!-- dit werkte niet qua link, nu wel-->
                                     <input type="number" value="1" min="1" max= "{{ $product->stock }}" name="quantity">
