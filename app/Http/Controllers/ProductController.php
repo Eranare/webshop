@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\models\Product;
 use App\models\Category;
-
+use App\models\Discount;
 class ProductController extends Controller
 {
     /**
@@ -18,7 +18,8 @@ class ProductController extends Controller
         //
             $products = Product::all();
             $category = Category::all();
-            return view('shop.index')->with('products',$products)->with('categories', $category); 
+            $discounts = Discount::all();
+            return view('shop.index')->with('products',$products)->with('categories', $category)->with('discounts',$discounts); 
     }
 
     /**
@@ -60,7 +61,8 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         //$prodcat = $product->category_id;
         $category = Category::findOrFail($product->category_id);
-        return view('shop.product', ['product' => $product, 'category' =>$category]);
+        $discount = Discount::find($product->discount_id);
+        return view('shop.product', ['product' => $product, 'category' =>$category, 'discount'=> $discount]);
     }
 /*
     public function showProduct($id, $category_id)

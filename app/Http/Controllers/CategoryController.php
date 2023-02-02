@@ -18,9 +18,7 @@ class CategoryController extends Controller
         //
         $categories = Category::all();
         $discounts = Discount::all();
-        if($request->ajax()) {
-            return view('admin.users')>with('categories',$categories)->with('discounts',$discounts)->renderSections()['content'];
-    }
+
    
         return view('shop.index')->with('categories',$categories)->with('discounts',$discounts); 
     }
@@ -76,8 +74,10 @@ class CategoryController extends Controller
     {
         {
             //
+            
             $category = Category::findOrFail($id);
-            return view('shop.category', ['category' => $category]);
+            $discounts= Discount::all();
+            return view('shop.category')->with('category',$category)->with('discounts',$discounts);
         }
     }    
 

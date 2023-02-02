@@ -75,6 +75,38 @@
                 </div>
                 
             </div>
+            @if($product->discount_id >0)
+            <?php
+
+    if($discount->id == $product->discount_id)
+    {
+        (double)$disprice = 0.00;
+        (double)$price = $product->price;
+        (double)$percent=$discount->discount;
+
+        $disprice +=$price - round(($price /100) * $percent,2);} ?>
+            <div class="relative whitespace-nowrap py-4 pl-5 pr-4 text-right sm:pr-6">
+                <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-1 mt-1" style="text-shadow:-1px -1px 0 #7598d1,1px -1px 0 #7598d1,-1px 1px 0 #7598d1,1px 1px 0 #7598d1;">
+                    Product: {{$product->name}}
+                </p>
+                <p class="font-semibold dark:text-gray-600 text-xl leading-5 text-gray-600 mt-2 mb-2">
+                    Price =$<s>{{number_format((double)$product->price, 2, '.', '')}}</s><strong><?php echo '$'.number_format((double)$disprice, 2, '.', ''); ?></strong>
+                </p>
+
+                <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" value="{{ $product->id }}" name="id">
+                        <input type="hidden" value="{{ $product->name }}" name="name">
+                        <input type="hidden" value="{{ $disprice}}" name="price">
+                        <input type="hidden" value="{{ $product->stock }}" name="stock">
+                        <input type="hidden" value="{{ url('storage/'.$product->photo) }}"  name="image"> <!-- dit werkte niet qua link, nu wel-->
+                        <input type="number" value="1" min="1" max= "{{ $product->stock }}" name="quantity">
+                        <button class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm
+                hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">Add to cart</button>
+                </form>
+
+            </div>
+            @else
             <div class="relative whitespace-nowrap py-4 pl-5 pr-4 text-right sm:pr-6">
                 <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-1 mt-1" style="text-shadow:-1px -1px 0 #7598d1,1px -1px 0 #7598d1,-1px 1px 0 #7598d1,1px 1px 0 #7598d1;">
                     Product: {{$product->name}}
@@ -94,9 +126,8 @@
                         <button class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm
                 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">Add to cart</button>
                 </form>
-
             </div>
-            
+            @endif
         </div>
         <strong>Description:</strong> {{$product->description}}
         <br>

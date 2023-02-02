@@ -1,9 +1,16 @@
-<!-- on page load attempt to push Address from customer session into customer table, order products from cart into order products table  and id's to Order-->
-Thank you for your purchase
+@extends('layout.app')
+@section('body')
+@section('title', 'Order Confirmed')
+
+
 
 <style>
 .buttonbasket{
   display:none;
 } 
 </style>
-<a href="/">Back to store</a>
+<div class= 'text-xl text-center border h-full w-full'>
+Thank you for your purchase.<br>
+<a href="/" class='underline border '>Back to store</a></div>
+
+@endsection
