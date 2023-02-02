@@ -115,7 +115,6 @@ class CartController extends Controller
             'payment_id'=>'order'.rand(1000, 9999),
             'orderstatus'=> 1,
             'price'=> \Cart::getTotal(),
-
         ]);
         
         

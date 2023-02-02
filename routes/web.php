@@ -15,7 +15,7 @@ use App\Http\Controllers\OrderPendingController;
 use App\Http\Controllers\OrderCompletedController;
 use App\Http\Controllers\OrderCancelledController;
 use App\Http\Controllers\DiscountController;
-
+use App\Http\Controllers\VeganController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +38,7 @@ Route::get('/', [CategoryController::class, 'index']);
 Route::get('/home', [CategoryController::class, 'index']);
 
 Route::resource('/categories', CategoryController::class);
+Route::resource('/vegan', VeganController::class);
 /*
 Route::get('/categories/{category}/products/{product}', function ($category, $product) {
     return 'categories/{category->id}/products/{product->id}';

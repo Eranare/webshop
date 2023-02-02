@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\models\Category;
-use App\models\Discount;
-
+use App\Models\Category;
+use App\Models\Discount;
+use App\Models\Product;
 class CategoryController extends Controller
 {
     /**
@@ -21,6 +21,17 @@ class CategoryController extends Controller
         return view('shop.index')->with('categories',$categories)->with('discounts',$discounts); 
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function vegan(){
+        $products = Product::all()->where('vegan' == 1);
+        
+            return view('shop.index')->with('products',$products);
+        
+    }
     /**
      * Show the form for creating a new resource.
      *

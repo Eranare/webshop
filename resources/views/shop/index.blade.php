@@ -6,7 +6,47 @@
 @section('body')
 
 
-    <!-- Discounts here Discounts here Discounts here Discounts here-->
+
+<div class="text-right">
+<h2><a href ="{{route('admin.index' )}}">tempt admin link </a></h2>
+</div>
+
+<div class="flex justify-center">
+    <img class="h-20" src="{{ asset('images/divider.png') }}" alt="colorful divider">                
+</div>
+
+<div class="container border">       
+    <ul class="grid grid-cols-6 gap-1">
+    @foreach ($categories as $category)
+    <li>
+        
+    <div> 
+        <div class="mx-0 px-0 mt-1 sm:mt-0 sm:col-span-2">
+            <div class ="flex items-center"> 
+                <span class="square-full overflow-hidden">
+                    <a href="{{route('categories.show', $category->id)}}"><img class="max-w-xs hover:scale-110 transition duration-300 ease-in-out rounded-xl object-cover" src="{{ url('storage/'.$category->photo) }}" width='300px' height='200px' ></a>
+                </span>
+            </div>
+        </div>
+    </div>
+    </li>
+    @endforeach
+    <li>
+        
+        <div> 
+            <div class="mx-0 px-0 mt-1 sm:mt-0 sm:col-span-2">
+                <div class ="flex items-center"> 
+                    <span class="square-full overflow-hidden">
+                        <a href="{{route('vegan.index')}}"><img class="max-w-xs hover:scale-110 transition duration-300 ease-in-out rounded-xl object-cover" src="{{ url('storage/photos/vegan.jpg') }}" width='300px' height='200px' ></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        </li>
+    </ul>
+</div>
+
+
 
     <div class="container">    
     <ul class="grid grid-cols-5 gap-4"> 
@@ -27,12 +67,14 @@
                 Price = <s>{{$product->price}} </s> 
                 @foreach($discounts as $discount)
                 <?php
-                (double)$disprice = 0.00;
-                (double)$price = $product->price;
-                $discount->id = $product->discount_id;
+
+                if($discount->id == $product->discount_id)
+                {
+                    (double)$disprice = 0.00;
+                    (double)$price = $product->price;
                 (double)$percent=$discount->discount;
                 
-                $disprice +=$price - round(($price /100) * $percent,2); ?>
+                $disprice +=$price - round(($price /100) * $percent,2);} ?>
                 @endforeach 
                 <strong><?php echo $disprice; ?></strong>
 

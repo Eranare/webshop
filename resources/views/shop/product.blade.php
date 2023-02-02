@@ -6,8 +6,11 @@
 
 <nav class="cotainer border">
     <a href="{{route('categories.index')}}">Home</a> ->
-    <a href="{{route('categories.show', $category->id)}}">{{$category->name}}</a> ->
-    
+    <a href="{{route('categories.show', $category->id)}}">{{$category->name}}</a> 
+    @if($product->vegan == 1 )
+    /<a href="{{route('vegan.index')}}" > Vegan</a>
+    @endif
+    ->
     <a href="#">{{$product->name}}</a>
 </nav>
 
