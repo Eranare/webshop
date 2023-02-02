@@ -5,10 +5,13 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | solitaire</title>
-    <link rel="shortcut icon" href="/public/TemplateData/favicon.ico">
-    <link rel="stylesheet" href="/public/TemplateData/style.css">
+    <link rel="shortcut icon" href="{{asset('/public/solitaire/TemplateData/favicon.ico')}}">
+    <link rel="stylesheet" href="{{asset('/public/solitaire/TemplateData/style.css')}}">
   </head>
   <body>
+  @extends('layouts.app')
+
+@section('content')
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600></canvas>
       <div id="unity-loading-bar">
@@ -56,7 +59,7 @@
         updateBannerVisibility();
       }
 
-      var buildUrl = "/public/build";
+      var buildUrl = "/public/solitaire/build";
       var loaderUrl = buildUrl + "/build.loader.js";
       var config = {
         dataUrl: buildUrl + "/build.data.br",
@@ -116,4 +119,4 @@
       };
       document.body.appendChild(script);
     </script>
-
+@endsection

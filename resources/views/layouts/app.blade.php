@@ -161,9 +161,7 @@
                         </svg>
                         <span class="d-none d-md-inline text-slate-400"> Discount Management
                     </span></a></li>
-                    <li class="nav-item">
-                    <a class="nav-link pl-0" href="{{ route('admin.work') }}"></i><span class="d-none d-md-inline text-slate-400"> other IMPORTANT work, ADMIN ONLY
-                    </span></a></li>
+
             </ul>
         </nav>
         </aside>
