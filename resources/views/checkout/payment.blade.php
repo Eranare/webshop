@@ -27,7 +27,6 @@ push button sends to confirm
 </head>
 <body class="container">
 <img class = "w-full h-full -z-5 flex sticky" src="{{asset('bevestig.jpg')}}"  > 
-${{ Cart::getTotal() }}
 <br>
 <style>
 .buttonbasket{
@@ -36,8 +35,13 @@ ${{ Cart::getTotal() }}
 </style>
 
 <br>
+<div class="flex justify-center absolute inset-0 p-8 h-5/5 w-full opacity-0 opacity-100">
+${{ number_format((double)Cart::getTotal(), 2, '.', '') }}
+
+                <div class="flex justify-center bg-transparent font-medium text-base leading-4 py-6 w-5/5 mt-2 text-black">
 <form action="{{ route('cart.postCheckout') }}" method="GET" enctype="multipart/form-data">
-<button><img src="{{asset('bevestig knop.jpg')}}" class="flex top-90 left-90
-"></button>
+<button><img src="{{asset('bevestig knop.jpg')}}" class="flex top-90 left-90"></button>
 </form>
+</div>
+</div>
 </body>

@@ -6,7 +6,7 @@
 
 <!-- Discounts here Discounts here Discounts here Discounts here-->
 
-<div class="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
+<div class="flex items-center justify-center w-full max-h-96 py-24 sm:py-8 px-4">
             <div class="w-full relative flex items-center justify-center">
                 <button aria-label="slide backward" class="absolute z-30 left-0 ml-2 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
                     <svg class="dark:text-gray-900" width="24" height="36" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
