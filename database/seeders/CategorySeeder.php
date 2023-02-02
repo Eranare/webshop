@@ -28,6 +28,6 @@ class CategorySeeder extends Seeder
     {
         //
 
-        $category = Category::factory()->count(6)->create();
+        $category = Category::factory()->count(5)->create();
     }
 }
