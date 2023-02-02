@@ -30,6 +30,18 @@
     </div>
     </li>
     @endforeach
+    <li>
+        
+        <div> 
+            <div class="mx-0 px-0 mt-1 sm:mt-0 sm:col-span-2">
+                <div class ="flex items-center"> 
+                    <span class="square-full overflow-hidden">
+                        <a href="{{route('vegan.index')}}"><img class="max-w-xs hover:scale-110 transition duration-300 ease-in-out rounded-xl object-cover" src="{{ url('storage/photos/vegan.jpg') }}" width='300px' height='200px' ></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        </li>
     </ul>
 </div>
 
@@ -64,12 +76,14 @@
                 Price = <s>{{$product->price}} </s> 
                 @foreach($discounts as $discount)
                 <?php
-                (double)$disprice = 0.00;
-                (double)$price = $product->price;
-                $discount->id = $product->discount_id;
+
+                if($discount->id == $product->discount_id)
+                {
+                    (double)$disprice = 0.00;
+                    (double)$price = $product->price;
                 (double)$percent=$discount->discount;
                 
-                $disprice +=$price - round(($price /100) * $percent,2); ?>
+                $disprice +=$price - round(($price /100) * $percent,2);} ?>
                 @endforeach 
                 <strong><?php echo $disprice; ?></strong>
 
