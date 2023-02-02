@@ -6,34 +6,40 @@
   display:none;
 } 
 </style>
-<div class="container border w-1/3" ><!--Container voor form -->
+<div class="container  w-full h-200 inline-flex border"> 
  <!-- push address and name etc into customer session data-->
-Fill in data
- <form action="{{ route('cart.pay') }}" method="POST" enctype="multipart/form-data">
+  <div class="h-full   mx-auto px-5 py-4 sticky  " >
+    <form action="{{ route('cart.pay') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <input type="text" placeholder="first name" value='' name="first_name">Req<br>
-                        <input type="text" placeholder="last name" value='' name="last_name">Req<br>
-                        <input type="number" placeholder="primary phone"value='' name="phone1">Req<br>
-                        <input type="text" placeholder="email" value='' name="email">Req<br>
-                        <input type="number" placeholder="secondary phone" value='' name="phone2"><br> <!-- dit werkte niet qua link, nu wel-->
-                        <input type="text" placeholder="address 1" value='' name="address1">Req<br>
-                        <input type='text' placeholder='House number 1' value='' name='house_number1'>Req<br>
-                        <input type='text' placeholder='Postal code 1' value='' name='postal_code1' >Req<br>
-                        <input type='text' placeholder='City 1' value='' name='city1'>Req<br>
-                        <input type="text" placeholder="address 1" value=''  name="address2"><br>
-                        <input type='text' placeholder='House number 1' value='' name='house_number2'><br>
-                        <input type='text' placeholder='Postal code 1' value='' name='postal_code2' ><br>
-                        <input type='text' placeholder='City 1' value='' name='city2'><br>
-                        <button class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm
-            hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">voeg toe</button>
-
-</div>
-
-<div><!--Container voor mini cart lijst -->
-  <div>
-                         Total: ${{ Cart::getTotal() }}                        
+                        <div class='p-4 mx-7 inline-flex flex-col border'>
+                        <label>First name:</label><input type="text" placeholder="first name*" value='' name="first_name"><br>
+                        <label>Last name:</label><input type="text" placeholder="last name*" value='' name="last_name"><br>
+                        <label>Phone:</label><input type="number" placeholder=" phone*"value='' name="phone1"><br>
+                        <label>Email:</label><input type="text" placeholder="email*" value='' name="email"><br>
+                        <label>second phone:</label><input type="number" placeholder="phone(optional)" value='' name="phone2"><br>
+                        </div>
+                        <div class="p-4 mx-7 inline-flex flex-col border ">
+                        <label>Primary address: <!-- dit werkte niet qua link, nu wel--></label>
+                        <label>Last name:</label><input type="text" placeholder="address* " value='' name="address1"><br>
+                        <label>Last name:</label><input type='text' placeholder='House number* ' value='' name='house_number1'><br>
+                        <label>Postal code:</label><input type='text' placeholder='Postal code* ' value='' name='postal_code1' ><br>
+                        <label>City:</label><input type='text' placeholder='City* ' value='' name='city1'><br>
+                        </div>
+                        <div class="p-4  mx-7 inline-flex flex-col border">
+                        <label>Deliver instead to:</label>
+                        <label>Address:</label><input type="text" placeholder="Address" value=''  name="address2"><br>
+                        <label>House number:</label><input type='text' placeholder='House number' value='' name='house_number2'><br>
+                        <label>Postal code:</label><input type='text' placeholder='Postal code ' value='' name='postal_code2' ><br>
+                        <label>City:</label><input type='text' placeholder='City ' value='' name='city2'><br>
   </div>
+
+  
+  
   <div>
+    <div class="p-8 inline-flex flex-col ">
+                        <strong> Total: ${{ Cart::getTotal() }} </strong><br>
+    
+    <div class="p-2 inline-flex flex-col">
                             Please confirm shipping Address and payment option <br>
                             Payment option:
                             
@@ -47,10 +53,9 @@ Fill in data
                             
                             <button type='submit' class="px-6 py-2 text-green-800 bg-green-300">Confirm</button>
                           </form>
+    </div>
   </div>
-  <div class="float-r container w-1/3 border">
-    Shopping list
-  </div>
+</div>
 </div>
 
 @endsection
