@@ -32,7 +32,7 @@
                 <img class="h-full object-cover" src="{{ url('storage/'.$product->photo) }}" width='300px' height='200px' >
                 </span>
                 
-                <div class="inline-block justify-center items-center max-h-10 bg-slate-50 opacity-75 place-items-center border">
+                <div class="rounded-xl inline-block justify-center items-center max-h-11 pb-1 mx-20 bg-slate-50 opacity-75 place-items-center border border-2 border-Emerald-200">
                 @if (str_contains(strtolower($product->ingredients), 'peanut'))
                     <img class="w-10 inline-block" src="{{ asset('images/peanut-amber_109463.png') }}" title="peanut allergy" alt="peanut allergy">
                 @elseif  (str_contains(strtolower($product->ingredients), 'nut'))
