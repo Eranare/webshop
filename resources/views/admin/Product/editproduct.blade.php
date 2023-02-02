@@ -89,6 +89,15 @@
                 </select>
                 </div>
             </div>
+            <div>
+                <strong>Vegan:  </strong>
+                <select>
+                    @if($product->vegan == 1)
+                    <option type="checkbox" name='vegancheck'  checked> </input>
+
+                    @endif
+</select>
+            </div>
             <div class="text-center">
               <button type="submit" class="bg-yellow-200 px-3 py-2 rounded shadow-md">Submit</button>
             </div>
