@@ -130,15 +130,7 @@ class AdminProductController extends Controller
         else{
             $product->discount_id = $request->discount_id;
             }
-        if($request->vegancheck == 'on')
-            {
-            $product->vegan = 1;
-            } 
 
-        else
-            {
-            $product->vegan = 0;
-            }
         if($request->hasFile('photo')){
         $path = $request->file('photo')->store('photos/Products', 'public');
     
