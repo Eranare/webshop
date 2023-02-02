@@ -32,9 +32,7 @@ class CategoryController extends Controller
      */
     public function vegan(){
         $products = Product::all()->where('vegan' == 1);
-        if($request->ajax()) {
-            return view('shop.index',$products)->renderSections()['content'];
-        }
+
    
             return view('shop.index')->with('products',$products);
         
