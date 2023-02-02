@@ -76,7 +76,15 @@
                 </select>
             </div>
         </div>
-
+        <div>
+                <strong>Vegan:  </strong>
+                <select name="vegan" class="form-control">
+                    
+                    <option  value="0">No</input>
+                    <option  value="1">Yes </input>
+                    
+                </select>
+            </div>
        
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="bg-yellow-200 px-3 py-2 rounded shadow-md">Submit</button>

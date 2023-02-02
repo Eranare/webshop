@@ -52,8 +52,9 @@ class AdminProductController extends Controller
             'ingredients' => 'required',
             'stock' => 'required',
             'price' => 'required',
+            
             'category_id' => 'required',
-
+            'vegan' => 'required',
         ]);
         $product = Product::create($request->except('_token'));
 

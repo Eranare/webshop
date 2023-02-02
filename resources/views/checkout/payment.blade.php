@@ -3,6 +3,7 @@ Show actual number
 
 push button sends to confirm
 -->
+<img class = "w-full h-full -z-5" src="{{asset('bevestig.jpg')}}"  > 
 ${{ Cart::getTotal() }}
 <br>
 <style>

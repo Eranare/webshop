@@ -71,6 +71,14 @@
                 {{$category->name}}
             </div>
         </div>
+        <div><label>Vegan: </label>
+                    @if($product->vegan == 1)
+                    <input type="checkbox" class= 'pointer-events-none' checked> </input>
+
+                    @else
+                    <input type="checkbox" class= 'pointer-events-none'>
+                    @endif
+</div>
         <div>
             <div>
                 <strong>created_at:</strong>
