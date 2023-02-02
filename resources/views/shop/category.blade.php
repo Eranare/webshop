@@ -30,12 +30,17 @@ Home</a> ->
 <!-- category description: -->
 <div class ="flex justify-center">
     <div class="text-justify w-3/5">
-    <strong>Description:</strong> {{$category->description}}
+        <p class="inline text-lg"><strong>Description:</strong> {{$category->description}}</p>
     </div>
+</div>
+
+<div class="flex justify-center">
+    <img class="h-20 rotate-180" src="{{ asset('images/divider.png') }}" alt="colorful divider">                
 </div>
 
 
 <!-- products matching category: -->
+<div class="container h-15 w-15 square-full overflow-hidden bg-red-300 bg-opacity-25 sticky">
 <div class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-y-12 lg:gap-x-8 sm:gap-y-10 sm:gap-x-6 gap-y-6 lg:mt-12 mt-10">
     @foreach ($category->products as $product)
 
@@ -67,6 +72,6 @@ Home</a> ->
                     </div>
     @endforeach
 </div>
-
+</div>
 @extends('partials.basket')
 @endsection

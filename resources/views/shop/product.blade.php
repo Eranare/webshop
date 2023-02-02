@@ -4,27 +4,30 @@
 @extends('partials.basket')
 
 
-<nav class="cotainer border">
-    <a href="{{route('categories.index')}}">Home</a> ->
-    <a href="{{route('categories.show', $category->id)}}">{{$category->name}}</a> 
+<!-- nav: -->
+<nav class="cotainer">
+    <a href="{{route('categories.index')}}" class="py-1 text-base" style="text-shadow:-1px -1px 0 #FFFFFF,1px -1px 0 #FFFFFF,-1px 1px 0 #FFFFFF,1px 1px 0 #FFFFFF;">
+    Home</a> ->
+    <a href="{{route('categories.show', $category->id)}}" class="py-1 text-base" style="text-shadow:-1px -1px 0 #FFFFFF,1px -1px 0 #FFFFFF,-1px 1px 0 #FFFFFF,1px 1px 0 #FFFFFF;">
+    {{$category->name}}</a> 
     @if($product->vegan == 1 )
-    /<a href="{{route('vegan.index')}}" > Vegan</a>
+    /<a href="{{route('vegan.index')}}" class="py-1 text-base" style="text-shadow:-1px -1px 0 #FFFFFF,1px -1px 0 #FFFFFF,-1px 1px 0 #FFFFFF,1px 1px 0 #FFFFFF;" >
+    Vegan</a>
     @endif
     ->
-    <a href="#">{{$product->name}}</a>
+    <a href="#" class="py-1 text-base" style="text-shadow:-1px -1px 0 #FFFFFF,1px -1px 0 #FFFFFF,-1px 1px 0 #FFFFFF,1px 1px 0 #FFFFFF;">
+    {{$product->name}}</a>
 </nav>
 
 
-
-
-Product page
+<!-- show single product: -->
 
 <ul>
 <li>
 <div class="container py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
     <div class="mt-1 sm:mt-0 sm:col-span-2">
         <div class ="flex items-center"> 
-            <div class="container border">
+            <div class="container">
                 <span class="h-15 w-15 square-full overflow-hidden bg-gray-100">
                 <img class="h-full object-cover" src="{{ url('storage/'.$product->photo) }}" width='300px' height='200px' >
                 </span>
@@ -68,16 +71,17 @@ Product page
                     <img class="w-10 inline-block" src="{{ asset('images/milk-amber_109466.png') }}" title="lactose allergy" alt="lactose allergy">                
                 @else            
                 @endif
-                
-                    <svg> 
-                        peanuts, wheat, soy, milk
-                    </svg>
+        
                 </div>
                 
             </div>
             <div class="relative whitespace-nowrap py-4 pl-5 pr-4 text-right sm:pr-6">
-                <p class="text-2xl"><strong> Product: {{$product->name}} </strong></p><br>
-                <p class="text-xl"><strong> Price ={{$product->price}} </strong></p><br>
+                <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-1 mt-1" style="text-shadow:-1px -1px 0 #7598d1,1px -1px 0 #7598d1,-1px 1px 0 #7598d1,1px 1px 0 #7598d1;">
+                    Product: {{$product->name}}
+                </p>
+                <p class="font-semibold dark:text-gray-600 text-xl leading-5 text-gray-600 mt-2 mb-2">
+                    Price ={{$product->price}}
+                </p>
 
                 <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
