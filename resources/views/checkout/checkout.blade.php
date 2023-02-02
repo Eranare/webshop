@@ -37,7 +37,7 @@
   
   <div>
     <div class="p-8 inline-flex flex-col ">
-                        <strong> Total: ${{ Cart::getTotal() }} </strong><br>
+                        <strong> Total: ${{number_format((double)Cart::getTotal(), 2, '.', '')}} </strong><br>
     
     <div class="p-2 inline-flex flex-col">
                             Please confirm shipping Address and payment option <br>

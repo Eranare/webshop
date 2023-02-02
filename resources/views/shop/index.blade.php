@@ -7,14 +7,14 @@
 <!-- Discounts here Discounts here Discounts here Discounts here-->
 
 <div class="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
-            <div class="w-full relative flex items-center justify-center">
+            <div class="w-full relative flex items-center justify-center container rounded-xl">
                 <button aria-label="slide backward" class="absolute z-30 left-0 ml-2 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
                     <svg class="dark:text-gray-900" width="24" height="36" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 1L1 7L7 13" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </button>
                 <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
-                    <div id="sliderdiscount" class="h-full flex lg:gap-4 md:gap-4 gap-2 items-center justify-start transition ease-out duration-700">
+                    <div id="sliderdiscount" class="h-full flex lg:gap-4 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
 
 
     @foreach($categories as $category)        
@@ -22,10 +22,11 @@
     @if($product->discount_id >0)
 
     <div class="relative square-full overflow-hidden">
-                        <div class="rounded-xl absolute top-0 left-0 py-2 px-4 bg-white bg-opacity-50"><p class="text-xs leading-3 text-gray-800">Discount</p></div>
                         <div class="items-center relative group">
                         <div class="flex justify-center items-center rounded-xl opacity-0 bg-gradient-to-t from-gray-800 via-gray-600 to-opacity-10 group-hover:opacity-40 absolute top-0 left-0 h-full w-full"></div>
                         <img class="object-cover rounded-xl" style="max-height:230px;display:block;margin:auto;" src="{{ url('storage/'.$product->photo) }}">
+                        <div class="rounded-xl absolute top-0 left-0 py-2 px-4 bg-white bg-opacity-75"><p class="text-xs leading-3 text-gray-800">Discount</p></div>
+
             
             <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-1 mt-1" style="text-shadow:-1px -1px 0 #7598d1,1px -1px 0 #7598d1,-1px 1px 0 #7598d1,1px 1px 0 #7598d1;">
             Product: {{$product->name}}</p>
@@ -81,7 +82,7 @@
 <!-- Categories here Categories here Categories here Categories here-->
 
 <div class="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
-            <div class="w-full relative flex items-center justify-center">
+            <div class="w-full relative flex items-center justify-center container border bg-amber-100 border-amber-100 border-8 rounded-xl">
                 <button aria-label="slide backward" class="absolute z-30 left-0 ml-2 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prevC">
                     <svg class="dark:text-gray-900" width="24" height="36" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 1L1 7L7 13" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
@@ -99,7 +100,7 @@
                     <a href="{{route('categories.show', $category->id)}}"><img class="max-w-xs group-hover:scale-110 transition duration-300 ease-in-out object-cover" src="{{ url('storage/'.$category->photo) }}" width='300px' height='200px'>
                 </span>
             <div class="flex justify-center absolute inset-0 p-8 h-5/5 w-full opacity-0 opacity-100">
-                <div class="flex justify-center bg-transparent font-medium text-base leading-4 py-6 w-5/5 mt-2 text-white">
+                <div class="flex justify-center bg-transparent font-medium text-base leading-4 py-3 w-5/5 mt-2 text-white">
                     <p class="py-6 text-2xl" style="text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;"><strong>{{$category->name}}</strong></p>
                 </div>
             </div>
@@ -108,8 +109,6 @@
             </div>
         </div>
     </div>
-            
-
 @endforeach
 
 
@@ -139,7 +138,7 @@
 
 
 <!-- Products here Products here Products here Products here-->
-
+<div class="container h-15 w-15 square-full overflow-hidden bg-red-300 bg-opacity-25 sticky">
 <div class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-y-12 lg:gap-x-8 sm:gap-y-10 sm:gap-x-6 gap-y-6 lg:mt-12 mt-10">
     @foreach ($categories as $category)
     @foreach ($category->products as $product)
@@ -214,6 +213,7 @@
     
     @endforeach
     @endforeach
+</div>
 </div>
 
 <script>
