@@ -6,9 +6,18 @@
 
 <!-- Discounts here Discounts here Discounts here Discounts here-->
 
-    <div class="container">    
-    <ul class="grid grid-cols-5 gap-4"> 
-        @foreach($categories as $category)        
+<div class="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
+            <div class="w-full relative flex items-center justify-center">
+                <button aria-label="slide backward" class="absolute z-30 left-0 ml-2 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
+                    <svg class="dark:text-gray-900" width="24" height="36" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 1L1 7L7 13" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
+                    <div id="sliderdiscount" class="h-full flex lg:gap-4 md:gap-4 gap-2 items-center justify-start transition ease-out duration-700">
+
+
+    @foreach($categories as $category)        
     @foreach ($category->products as $product)
     @if($product->discount_id >0)
 
@@ -16,7 +25,7 @@
                         <div class="rounded-xl absolute top-0 left-0 py-2 px-4 bg-white bg-opacity-50"><p class="text-xs leading-3 text-gray-800">Discount</p></div>
                         <div class="items-center relative group">
                         <div class="flex justify-center items-center rounded-xl opacity-0 bg-gradient-to-t from-gray-800 via-gray-600 to-opacity-10 group-hover:opacity-40 absolute top-0 left-0 h-full w-full"></div>
-                <a href="{{route('products.show', $product->id)}}"><img class="object-cover" style="max-height:230px;display:block;margin:auto;" src="{{ url('storage/'.$product->photo) }}"></a>
+                        <img class="object-cover rounded-xl" style="max-height:230px;display:block;margin:auto;" src="{{ url('storage/'.$product->photo) }}">
             
             <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-1 mt-1" style="text-shadow:-1px -1px 0 #7598d1,1px -1px 0 #7598d1,-1px 1px 0 #7598d1,1px 1px 0 #7598d1;">
             Product: {{$product->name}}</p>
@@ -58,43 +67,52 @@
     @endif  
     @endforeach
     @endforeach
-    </ul>
+                </div>
+            </div>
+        <button aria-label="slide forward" class="absolute z-30 right-0 mr-2 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400" id="next">
+            <svg class="dark:text-gray-900" width="24" height="36" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L7 7L1 13" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </button>
+    </div>
 </div>
 
 
 <!-- Categories here Categories here Categories here Categories here-->
 
-<div class="container border bg-amber-100 border-amber-100 border-8 rounded-xl">       
-<ul class="grid grid-cols-6 gap-1">
-    @foreach ($categories as $category)
-    <li>
-        <div class="mx-0 px-0 mt-1 sm:mt-0 sm:col-span-2">
+<div class="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
+            <div class="w-full relative flex items-center justify-center">
+                <button aria-label="slide backward" class="absolute z-30 left-0 ml-2 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prevC">
+                    <svg class="dark:text-gray-900" width="24" height="36" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 1L1 7L7 13" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
+                    <div id="slidercategory" class="h-full flex lg:gap-4 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
 
-        <div class="relative">
-<div class="relative group">
-            <div class ="flex items-center"> 
+
+@foreach ($categories as $category)
+<div class="relative">
+    <div class="relative group">
+            <div class="flex items-center"> 
                 <span class="square-full overflow-hidden rounded-xl">
-
-
-<a href="{{route('categories.show', $category->id)}}">
-    <img class="max-w-xs group-hover:scale-110 transition duration-300 ease-in-out object-cover" src="{{ url('storage/'.$category->photo) }}" width='300px' height='200px'>
-                <div class="flex justify-center absolute inset-0 p-8 h-5/5 w-full opacity-0 opacity-100">
-    <div class="flex justify-center bg-transparent font-medium text-base leading-4 py-6 w-5/5 mt-2 text-white">
-        <p class="py-6 text-2xl" style="text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;">
-        <strong>{{$category->name}}</strong></p>
-    </div>
-</div>
-                
-</a>
+                    <a href="{{route('categories.show', $category->id)}}"><img class="max-w-xs group-hover:scale-110 transition duration-300 ease-in-out object-cover" src="{{ url('storage/'.$category->photo) }}" width='300px' height='200px'>
                 </span>
+            <div class="flex justify-center absolute inset-0 p-8 h-5/5 w-full opacity-0 opacity-100">
+                <div class="flex justify-center bg-transparent font-medium text-base leading-4 py-6 w-5/5 mt-2 text-white">
+                    <p class="py-6 text-2xl" style="text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;"><strong>{{$category->name}}</strong></p>
+                </div>
             </div>
-                </div>
-                </div>
+                    </a>
 
+            </div>
         </div>
-    </li>
-    @endforeach
-    <li>
+    </div>
+            
+
+@endforeach
+
+
         <div class="mx-0 px-0 mt-1 sm:mt-0 sm:col-span-2">
             <div class ="flex items-center"> 
                 <span class="square-full overflow-hidden rounded-xl">
@@ -102,10 +120,17 @@
                 </span>
             </div>
         </div>
-    </li>
-</ul>
-</div>
 
+
+                </div>
+            </div>
+        <button aria-label="slide forward" class="absolute z-30 right-0 mr-2 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400" id="nextC">
+            <svg class="dark:text-gray-900" width="24" height="36" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L7 7L1 13" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </button>
+    </div>
+</div>
 
 
 <div class="flex justify-center">
@@ -149,4 +174,39 @@
     @endforeach
 </div>
 
+<script>
+    let defaultTransform = 0;
+function goNextDisc() {
+    defaultTransform = defaultTransform - 268;
+    var slider = document.getElementById("sliderdiscount");
+    if (Math.abs(defaultTransform) >= slider.scrollWidth / 3.0) defaultTransform = 0;
+    slider.style.transform = "translateX(" + defaultTransform + "px)";
+}
+next.addEventListener("click", goNextDisc);
+function goPrevDisc() {
+    var slider = document.getElementById("sliderdiscount");
+    if (Math.abs(defaultTransform) === 0) defaultTransform = 0;
+    else defaultTransform = defaultTransform + 268;
+    slider.style.transform = "translateX(" + defaultTransform + "px)";
+}
+prev.addEventListener("click", goPrevDisc);
+
+
+let defaultTransformC = 0;
+function goNextCat() {
+    defaultTransformC = defaultTransformC - 368;
+    var sliderC = document.getElementById("slidercategory");
+    if (Math.abs(defaultTransformC) >= sliderC.scrollWidth / 2.0) defaultTransformC = 0;
+    sliderC.style.transform = "translateX(" + defaultTransformC + "px)";
+}
+nextC.addEventListener("click", goNextCat);
+function goPrevCat() {
+    var sliderC = document.getElementById("slidercategory");
+    if (Math.abs(defaultTransformC) === 0) defaultTransformC = 0;
+    else defaultTransformC = defaultTransformC + 368;
+    sliderC.style.transform = "translateX(" + defaultTransformC + "px)";
+}
+prevC.addEventListener("click", goPrevCat);
+</script>    
+    
 @endsection

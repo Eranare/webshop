@@ -5,7 +5,7 @@
 
 
 <!-- nav: -->
-<nav class="cotainer">
+<nav class="container">
     <a href="{{route('categories.index')}}" class="py-1 text-base" style="text-shadow:-1px -1px 0 #FFFFFF,1px -1px 0 #FFFFFF,-1px 1px 0 #FFFFFF,1px 1px 0 #FFFFFF;">
     Home</a> ->
     <a href="{{route('categories.show', $category->id)}}" class="py-1 text-base" style="text-shadow:-1px -1px 0 #FFFFFF,1px -1px 0 #FFFFFF,-1px 1px 0 #FFFFFF,1px 1px 0 #FFFFFF;">
