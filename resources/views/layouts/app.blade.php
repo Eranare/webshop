@@ -105,7 +105,7 @@
         <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2 fixed">
             <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
                 <li class="nav-item">
-                    <a class="nav-link pl-0" href ="#">
+                    <a class="nav-link pl-0" href ="{{route('admin.index')}}">
                     <svg class="w-5 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 6.75L12 3m0 0l3.75 3.75M12 3v18" />
                     </svg>

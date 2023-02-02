@@ -13,11 +13,15 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
         $categories = Category::all();
         $discounts = Discount::all();
+        if($request->ajax()) {
+            return view('admin.users')>with('categories',$categories)->with('discounts',$discounts)->renderSections()['content'];
+    }
+   
         return view('shop.index')->with('categories',$categories)->with('discounts',$discounts); 
     }
 
@@ -28,7 +32,10 @@ class CategoryController extends Controller
      */
     public function vegan(){
         $products = Product::all()->where('vegan' == 1);
-        
+        if($request->ajax()) {
+            return view('shop.index',$products)->renderSections()['content'];
+        }
+   
             return view('shop.index')->with('products',$products);
         
     }
