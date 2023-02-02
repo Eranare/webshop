@@ -29,6 +29,7 @@
                 <th class="bg-blue-300 p-2 text-bold">Price</th>
                 <th class="bg-blue-300 p-2 text-bold">Discount</th>
                 <th class="bg-blue-300 p-2 text-bold">Category</th>
+                <th class="bg-blue-300 p-2 text-bold">Vegan</th>
                 <th class="bg-blue-300 p-2 text-bold">Created</th>
                 <th class="bg-blue-300 p-2 text-bold">Updated</th>
                 <th class="bg-blue-300 p-2 text-bold">Show</th>
@@ -60,6 +61,14 @@
                                                 {{ $category->name }}
                                             @endif
                                         @endforeach
+                </td>
+                <td class="truncate p-2">
+                    @if($product->vegan == 1)
+                    <input type="checkbox" class= 'pointer-events-none' checked> </input>
+
+                    @else
+                    <input type="checkbox" class= 'pointer-events-none'>
+                    @endif
                 </td>
                 <td class="truncate p-2">{{ $product->created_at }}</td>
                 <td class="truncate p-2">{{ Str::limit($product->updated_at, 10) }}</td>

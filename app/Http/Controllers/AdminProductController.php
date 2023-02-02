@@ -53,6 +53,7 @@ class AdminProductController extends Controller
             'stock' => 'required',
             'price' => 'required',
             'category_id' => 'required',
+
         ]);
         $product = Product::create($request->except('_token'));
 
@@ -116,6 +117,7 @@ class AdminProductController extends Controller
             'price' => 'required',
             'discount_id' => 'required',
             'category_id' => 'required',
+            
         ]);
 
         $product = Product::findOrFail($id);
@@ -124,9 +126,11 @@ class AdminProductController extends Controller
         if($request->discount_id == 'None'){
             
             $product->discount_id = 0;    
-        } else
+        } 
+        else{
             $product->discount_id = $request->discount_id;
-        
+            }
+
         if($request->hasFile('photo')){
         $path = $request->file('photo')->store('photos/Products', 'public');
     
