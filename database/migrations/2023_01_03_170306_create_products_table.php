@@ -19,8 +19,10 @@ return new class extends Migration
             $table->text('photo');
             $table->text('description')->nullable();
             $table->text('ingredients')->nullable();
+            $table->boolean('vegan')->default(0);
             $table->text('stock');
             $table->text('price');
+            $table->foreignId('discount_id')->nullable();
             $table->foreignId('category_id');
             $table->timestamps();
         });

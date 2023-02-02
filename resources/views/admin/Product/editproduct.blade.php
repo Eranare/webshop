@@ -68,11 +68,21 @@
                     <input type="number" step="0.01" name="price" class="form-control" placeholder="price" value="{{ $product->price }}">
                 </div>
             </div>
-
+            <div>
+                <div>
+                <strong>Discount:</strong>
+                <select name="discount_id" class="form-control" placeholder="discount_id">
+                    <option value = "None">None</option>
+                @foreach ($discounts as $discount)
+                    <option value="{{ $discount->id }}">{{ $discount->discount}}%</option>
+                @endforeach
+                </select>
+                </div>
+            </div>
             <div>
                 <div>
                 <strong>Category:</strong>
-                <select name="category_id" class="form-control" placeholder="category_id">
+                <select name="category_id" class="form-control" placeholder="category_id"> 
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                 @endforeach

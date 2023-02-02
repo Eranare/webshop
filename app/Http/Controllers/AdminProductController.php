@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\models\Product;
 use App\models\Category;
+use App\models\Discount;
 
 use \Illuminate\Support\Facades\Auth;
 class AdminProductController extends Controller
@@ -19,7 +20,8 @@ class AdminProductController extends Controller
        if (Auth::check()) {
         $products = Product::all();
         $categories = Category::all();
-        return view('admin.product.adminproduct')->with('products',$products)->with('categories', $categories); 
+            $discounts = Discount::all();
+        return view('admin.product.adminproduct')->with('products',$products)->with('categories', $categories)->with('discounts',$discounts); 
        }
        else return view('auth.login');
     }
@@ -91,7 +93,8 @@ class AdminProductController extends Controller
     {
         $categories = Category::all();
         $product = Product::findOrFail($id);
-        return view('admin.product.editproduct', compact('product','categories'));
+        $discounts = Discount::all();
+        return view('admin.product.editproduct', compact('product','categories', 'discounts'));
     }
 
     /**
@@ -109,14 +112,20 @@ class AdminProductController extends Controller
             'ingredients' => 'required',
             'stock' => 'required',
             'price' => 'required',
-
+            'discount_id' => 'required',
             'category_id' => 'required',
         ]);
-        
+
         $product = Product::findOrFail($id);
 
-        $product->update($request->except('photo'));
-if($request->hasFile('photo')){
+        $product->update($request->except('discount_id','photo'));
+        if($request->discount_id == 'None'){
+            
+            $product->discount_id = 0;    
+        } else
+            $product->discount_id = $request->discount_id;
+        
+        if($request->hasFile('photo')){
         $path = $request->file('photo')->store('photos/Products', 'public');
     
         $product->photo = $path;

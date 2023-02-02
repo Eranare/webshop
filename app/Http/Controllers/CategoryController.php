@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\models\Category;
+use App\models\Discount;
 
 class CategoryController extends Controller
 {
@@ -16,7 +17,8 @@ class CategoryController extends Controller
     {
         //
         $categories = Category::all();
-        return view('shop.index')->with('categories',$categories); 
+        $discounts = Discount::all();
+        return view('shop.index')->with('categories',$categories)->with('discounts',$discounts); 
     }
 
     /**

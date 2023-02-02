@@ -20,11 +20,11 @@ return new class extends Migration
             $table->text('phone1');
             $table->text('phone2')->nullable();
             $table->text('email');
-            $table->text('Address1');
+            $table->text('address1');
             $table->text('house_number1');
             $table->text('postal_code1');
             $table->text('city1');
-            $table->text('Address2')->nullable();
+            $table->text('address2')->nullable();
             $table->text('house_number2')->nullable();
             $table->text('postal_code2')->nullable();
             $table->text('city2')->nullable();
