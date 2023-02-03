@@ -133,14 +133,14 @@
                         </svg>
                         <span class="d-none d-md-inline text-slate-400"> Canceled Orders
                     </span></a></li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link pl-0" href ="{{route('admin.showStatistics')}}">
                         <svg class="w-5 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
                             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
                         </svg>
                         <span class="d-none d-md-inline text-slate-400"> Statistics
-                    </span></a></li>
+                    </span></a></li> -->
                 <li class="nav-item">
                     <a class="nav-link pl-0" href="{{ route('adminproduct.index') }}">
                         <svg class="w-5 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
