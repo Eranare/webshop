@@ -5,13 +5,11 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 
 use App\Http\Controllers\CartController;
-//use App\Models\Category;
-//use App\Models\Product;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\OrderController;
-use App\Http\Controllers\OrderPendingController;
+//use App\Http\Controllers\OrderPendingController;
 use App\Http\Controllers\OrderCompletedController;
 use App\Http\Controllers\OrderCancelledController;
 use App\Http\Controllers\DiscountController;

@@ -42,18 +42,12 @@ class DiscountController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-
+            'discount' => 'required',
         ]);
+
         $discount = new Discount;
         
-        
-        $discount->active = $request->input('active');
         $discount->discount = $request->input('discount');
-
-
-
-
-
 
         $discount->save();
 
@@ -85,7 +79,6 @@ class DiscountController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'active' => 'required',
             'discount' => 'required',
         ]);
         

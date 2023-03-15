@@ -7,9 +7,9 @@
             <div class="pull-left">
                 <h1 class="text-xl">Discounts page</h1>
             </div>
-          <!--  <div class="pull-right text-right">
+            <div class="pull-right text-right">
                 <a class="btn btn-success" href="{{ route('discount.create') }}" style="position: fixed"> Create New Discount</a> 
-            </div>-->
+            </div>
             @if (session('success'))
                 <div class="alert alert-success">
                     {{ session('success') }}

@@ -17,7 +17,7 @@ elseif($order->orderstatus == 3)
                 <h1 class="text-xl"> Show {{$orderStatus}} order</h1>
             </div>
             <div class="text-center">
-                <a class="bg-blue-200 px-3 py-2 m-8 rounded shadow-md" href="{{ route('admincompleted.index') }}"> Back</a>
+                <a class="bg-blue-200 px-3 py-2 m-8 rounded shadow-md" href="{{ route('admincancelled.index') }}"> Back</a>
             </div>
         </div>
     </div>
