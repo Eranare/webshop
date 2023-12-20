@@ -19,14 +19,15 @@ Admin panel:
 - Manage discounts
 - Add/remove categories
 - Inventory management
+![image](https://github.com/Eranare/webshop/assets/117918276/9e360b44-c0bd-4327-bfa4-3b069c8b09a0)
   
 Automated allergy icons:
 - Icons appear below the product image if the product description includes keywords related to common allergens.
-![image](https://github.com/Eranare/webshop/assets/117918276/17cb9033-7942-4bdb-a34b-dcb3c77ecb19)
+![image](https://github.com/Eranare/webshop/assets/117918276/b3090012-3177-4f97-8429-f03969bc9f7c)
+
 
 
 ## Database
 MySQL
 
-##
-![image](https://github.com/Eranare/webshop/assets/117918276/875c4102-520e-4246-ba69-2ab49e105373)
+
