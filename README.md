@@ -3,8 +3,7 @@
 
 ![image](https://github.com/Eranare/webshop/assets/117918276/5a145923-c916-4e8b-8943-84f93c18c97d)
 
-## codeGorilla eindproject voor php bootcamp.
-Made in Laravel 9
+A vibrant and user-friendly e-commerce platform for a sweet shopping experience. This project was developed as a final assignment for the codeGorilla PHP bootcamp, utilizing Laravel 9.
 
 ## Features
 
