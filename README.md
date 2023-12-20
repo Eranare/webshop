@@ -26,7 +26,7 @@ Automated allergy icons:
 ![image](https://github.com/Eranare/webshop/assets/117918276/17cb9033-7942-4bdb-a34b-dcb3c77ecb19)
 
 
-##Database
+## Database
 MySQL
 
 ##
