@@ -6,7 +6,7 @@
 ## codeGorilla eindproject voor php bootcamp.
 Made in Laravel 9
 
-##Features 
+## Features 
 
 - Product browsing
 - Shopping cart functionality
