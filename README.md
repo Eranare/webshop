@@ -23,7 +23,8 @@ Admin panel:
   
 Automated allergy icons:
 - Icons appear below the product image if the product description includes keywords related to common allergens.
-![image](https://github.com/Eranare/webshop/assets/117918276/8730968b-e022-4f2d-ae02-9ce2797bca42)
+![image](https://github.com/Eranare/webshop/assets/117918276/17cb9033-7942-4bdb-a34b-dcb3c77ecb19)
+
 
 ## 
 ![image](https://github.com/Eranare/webshop/assets/117918276/875c4102-520e-4246-ba69-2ab49e105373)
